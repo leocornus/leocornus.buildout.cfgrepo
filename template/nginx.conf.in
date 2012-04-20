@@ -62,7 +62,8 @@ http {
 
         location / {
 
-            include ${:nginx-build-location}/conf/fastcgi_params;
+            # the default include seems break the PATH_INFO param.
+            #include ${:nginx-build-location}/conf/fastcgi_params;
             # some fastcgi params
             fastcgi_connect_timeout 60;
             fastcgi_send_timeout 180;
