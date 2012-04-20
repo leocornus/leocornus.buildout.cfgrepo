@@ -1,0 +1,91 @@
+#
+# The template to generate a general and basic Nginx conf file.
+# It will be loaded by the recipe collective.recipe.template.
+# All the buildout properties in this template should be 
+# set in the same part where the template is loaded.
+#
+
+
+user ${:run-user};
+worker_processes ${:worker_processes};
+pid ${:pid};
+# we suppose use Supervisord to manage ...
+daemon off;
+
+events {
+    worker_connections 1024;
+    #use epoll;
+}
+
+http {
+    include ${:nginx-build-location}/conf/mime.types;
+    default_type application/octet-stream;
+    sendfile on;
+
+    # turn on gzip
+    gzip on;
+    gzip_comp_level 6;
+    gzip_proxied any;
+    gzip_vary on;
+    gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_buffers 16 8k;
+    gzip_disable .MSIE [1-6].(?!.*SV1).;
+
+    # more setting for server.
+    # client_header_timeout	10m;
+    # client_body_timeout	10m;
+    # send_timeout		10m;
+    # 
+    # connection_pool_size		256;
+    # client_header_buffer_size	1k;
+    # large_client_header_buffers	4 2k;
+    # request_pool_size		4k;
+    # 
+    # output_buffers	1 32k;
+    # postpone_output	1460;
+
+    # upload progress module
+    #upload_progress uploadprogress 2m;
+
+    server {
+
+        client_max_body_size ${:client_max_body_size};
+
+        listen ${:listen};
+        server_name ${:server_name}; 
+
+        error_log ${:error_log} ${:error_log-level};
+        access_log ${:access_log};
+
+        root ${:document-root};
+        #index index.php;
+
+        location / {
+
+            include ${:nginx-build-location}/conf/fastcgi_params;
+            # some fastcgi params
+            fastcgi_connect_timeout 60;
+            fastcgi_send_timeout 180;
+            fastcgi_read_timeout 180;
+            fastcgi_buffer_size 128k;
+            fastcgi_buffers 4 256k;
+            fastcgi_busy_buffers_size 256k;
+            fastcgi_temp_file_write_size 256k;
+            fastcgi_intercept_errors on;
+
+            fastcgi_pass ${:fastcgi_pass};
+            fastcgi_param PATH_INFO $fastcgi_script_name;
+            fastcgi_param REQUEST_METHOD $request_method;
+            fastcgi_param QUERY_STRING $query_string;
+            fastcgi_param CONTENT_TYPE $content_type;
+            fastcgi_param CONTENT_LENGTH $content_length;
+            fastcgi_pass_header Authorization;
+            fastcgi_intercept_errors off;
+            fastcgi_param REMOTE_ADDR $remote_addr;
+
+            # track uploads in the 'uploadprogress' zone
+            # uploads expires 30s after they finish.
+            #track_uploads uploadprogress 30s;
+        }
+    }
+}
