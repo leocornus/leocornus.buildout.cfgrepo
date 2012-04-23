@@ -5,7 +5,6 @@
 # set in the same part where the template is loaded.
 #
 
-
 user ${:run-user};
 worker_processes ${:worker_processes};
 pid ${:pid};
