@@ -17,6 +17,11 @@
 # This file is based the the sample config files from MySQL build,
 # under folder mysql-build/support-files.
 # There are more samples from that folder.
+#
+# The details document for all setting variables used here 
+# could be find in MySQL documentation:
+# http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.htm
+#
 
 # The following options will be passed to all MySQL clients
 [client]
@@ -49,6 +54,9 @@ thread_stack = 128K
 # 
 #skip-networking
 server-id   = 1
+
+# the file name for error message.
+log_error = ${:log_error}
 
 # Uncomment the following if you want to log updates
 #log-bin=mysql-bin
