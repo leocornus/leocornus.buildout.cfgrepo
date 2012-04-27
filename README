@@ -9,17 +9,48 @@ What's in
 
 I will try to include the following utilities:
 
+ * MySQL database compile and build
+ * MySQL database server setup utilities
+ * SQLite3 compile and build
+ * Nginx compile and build
+ * Nginx database server setup utilities.
+
 How to use
 ==========
 
-GitHub has very good/easy way to download.
+cfgrepo is very easy to use.  You could try the following methods:
 
-git submodules
-==============
+ * hard copy, download from GitHub and copy to your buildout facility.
+ * symlink, clone from GitHub and symlink to your buildout folder.
+ * submodule, adding cfgrepo as a submodule of your project.
 
-git has very good idea about submodule
+git submodule and tag
+=====================
+
+Add cfgrepo as a submodule
+
+$ cd myproject
+$ git submodule add git://github.com/leocornus/leocornus.buildout.cfgrepo.git buildout/cfgrepo
+$ git commit -m "add cfgrepo as submodule" .
+
+Update to use a certian tag.
+
+$ cd buildout/cfgrepo
+$ git checkout v0.1
+$ cd ../..
+$ git add buildout/cfgrepo
+$ git commit -m "update to cfgrepo v0.1" buildout/repo
+$ git push
 
 License
 =======
 
 GNU General Public License Version 2
+
+Change Log
+==========
+
+0.1 (2012-04-27)
+----------------
+
+ - initial release, taged as v0.1
