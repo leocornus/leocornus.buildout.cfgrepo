@@ -39,8 +39,14 @@ $ cd buildout/cfgrepo
 $ git checkout v0.1
 $ cd ../..
 $ git add buildout/cfgrepo
-$ git commit -m "update to cfgrepo v0.1" buildout/repo
+$ git commit -m "update to cfgrepo v0.1" buildout/cfgrepo
 $ git push
+
+Register and update submodule in your project.
+
+$ cd myproject
+$ git submodule init
+$ git submodule update
 
 License
 =======
