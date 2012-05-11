@@ -56,10 +56,17 @@ GNU General Public License Version 2
 Change Log
 ==========
 
+0.3 (NO Release)
+----------------
+
+ - Alternative way to setup supervisor by using
+   collective.recipe.template and zc.recipe.egg.
+
 0.2 (2012-05-08)
 ----------------
 
-- Add config profile to build legacy MySQL database server up to version 5.1.x 
+ - Add config profile to build legacy MySQL database server 
+   up to version 5.1.x 
 
 0.1 (2012-04-27)
 ----------------

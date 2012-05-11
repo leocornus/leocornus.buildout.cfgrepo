@@ -1,0 +1,43 @@
+################################################################### 
+# This is a very basic template for supervisord.
+# Normally you need copy this template and build your own one.
+#
+# It serves the following buildout part
+# - supervisor-conf
+################################################################### 
+
+# details document: 
+# http://www.supervisord.org/configuration.html#supervisord-section-values
+[supervisord]
+childlogdir = ${settings:log-directory}
+logfile = ${:logfile}
+logfile_maxbytes = 50MB
+logfile_backups = 10
+loglevel = ${:loglevel}
+pidfile = ${:pidfile}
+umask = 022
+nodaemon = ${:nodaemon}
+nocleanup = ${:nocleanup} 
+
+[inet_http_server]
+port = ${:port}
+username = ${:username}
+password = ${:password}
+
+[supervisorctl]
+serverurl = http://${:port}
+username = ${:username}
+password = ${:password} 
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory=supervisor.rpcinterface:make_main_rpcinterface
+
+########
+# Here we setup the programs.
+# check the part supervisor-conf for samples.
+########
+${:programs}
+
+# you may also add programs from any buildout part.
+# for example.
+# $ {nginx-conf:supervisor-program}
