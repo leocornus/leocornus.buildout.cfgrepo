@@ -79,6 +79,18 @@ log_error = ${:log_error}
 #innodb_flush_log_at_trx_commit = 1
 #innodb_lock_wait_timeout = 50
 
+# mysql_safe is the recommanded way to start MySQL server on 
+# unix-like system.
+# the init script will check this section to load proper settings.
+# If we are using supervisor to manage MySQL databae, 
+# this section will be ignored!
+# The mysqld_safe command line options will be 
+# the right place to set up MySQL Servers.
+[mysqld_safe]
+log_error = ${:log_error}
+pid_file = ${:pid_file}
+open_files_limit = ${:open_files_limit}
+
 [mysqldump]
 quick
 max_allowed_packet = 16M
