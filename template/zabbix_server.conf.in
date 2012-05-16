@@ -77,6 +77,7 @@ PidFile=${:pidfile}
 # Mandatory: no
 # Default:
 # DBHost=localhost
+DBHost=${:dbhost}
 
 ### Option: DBName
 #	Database name.
@@ -102,7 +103,7 @@ DBName=${:dbname}
 # Default:
 # DBUser=
 
-DBUser=root
+DBUser=${:dbuser}
 
 ### Option: DBPassword
 #	Database password. Ignored for SQLite.
@@ -111,6 +112,7 @@ DBUser=root
 # Mandatory: no
 # Default:
 # DBPassword=
+DBPassword=${:dbpassword}
 
 ### Option: DBSocket
 #	Path to MySQL socket.
@@ -126,6 +128,7 @@ DBUser=root
 # Range: 1024-65535
 # Default (for MySQL):
 # DBPort=3306
+DBPort=${:dbport}
 
 ############ ADVANCED PARAMETERS ################
 
