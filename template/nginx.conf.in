@@ -28,6 +28,7 @@ http {
     gzip_vary on;
     gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
     gzip_buffers 16 8k;
+    # disable gzip for IE 6.
     gzip_disable .MSIE [1-6].(?!.*SV1).;
 
     # more setting for server.
@@ -45,6 +46,12 @@ http {
 
     # upload progress module
     #upload_progress uploadprogress 2m;
+
+    # upstream could be:
+    # - fastcgi like phpfpm, Python
+    # - J2EE Web Container 
+    # - Application server like Zope/Plone
+    ${:upstreams}
 
     ${:servers}
 
