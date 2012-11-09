@@ -1,0 +1,20 @@
+${:serverinfo}
+#MYSQLServer     localhost
+#MYSQLPort       3306
+#MYSQLSocket     /tmp/mysql.sock
+MYSQLDatabase    ${:dbname}
+MYSQLUser        ${:username}
+MYSQLPassword    ${:userpassword}
+#MYSQLUser       root
+#MYSQLPassword   rootpw
+#MYSQLDatabase   pureftpd
+MYSQLCrypt       ${:password-crypt}
+#MYSQLCrypt      cleartext
+MYSQLGetPW       ${:sql-getpw}
+MYSQLGetDir      ${:sql-getdir}
+#MYSQLGetPW      SELECT Password FROM users WHERE User="\L"
+#MYSQLGetUID     SELECT Uid FROM users WHERE User="\L"
+#MYSQLGetGID     SELECT Gid FROM users WHERE User="\L"
+#MYSQLGetDir     SELECT Dir FROM users WHERE User="\L"
+MYSQLDefaultUID  ${:default-uid}
+MYSQLDefaultGID  ${:default-gid}
