@@ -25,8 +25,8 @@ MySQL 5.5 requirs CMake to build from source code.
 Make sure the CMake is installed in your system.
 
 * CMake
-* curses lib: ncurses-dev,
-  
+* curses lib: ncurses, ncurses-dev, cdk, cdk-devel
+ 
 PHP Dependences
 ===============
 
