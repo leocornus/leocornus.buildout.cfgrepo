@@ -25,8 +25,8 @@ memory_limit = 2048M
 ;;;;;;;;
 ; error handling.
 error_reporting = E_ALL & ~E_DEPRECATED
-display_errors = On
-display_startup_errors = On
+display_errors = ${:display_errors}
+display_startup_errors = ${:display_startup_errors}
 log_errors = On
 log_errors_max_len = 1024
 ignore_repeated_errors = Off
