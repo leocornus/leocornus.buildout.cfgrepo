@@ -36,7 +36,7 @@
 # Default:
 # LogFile=
 
-LogFile=${:logfile}
+LogFile=${:log-file}
 
 ### Option: LogFileSize
 #	Maximum size of log file in MB.
@@ -59,7 +59,7 @@ LogFile=${:logfile}
 # Range: 0-4
 # Default:
 # DebugLevel=3
-DebugLevel=${:debuglevel}
+DebugLevel=${:debug-level}
 
 ### Option: PidFile
 #	Name of PID file.
@@ -68,7 +68,7 @@ DebugLevel=${:debuglevel}
 # Default:
 # PidFile=/tmp/zabbix_server.pid
 
-PidFile=${:pidfile}
+PidFile=${:pid-file}
 
 ### Option: DBHost
 #	Database host name.
