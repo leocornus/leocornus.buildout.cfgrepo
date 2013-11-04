@@ -56,7 +56,7 @@ GNU General Public License Version 2
 Change Log
 ==========
 
-0.3 (NO Release)
+0.3 (2013-10-31)
 ----------------
 
  - Alternative way to setup supervisor by using
