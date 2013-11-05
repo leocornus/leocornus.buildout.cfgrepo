@@ -1,9 +1,8 @@
-
 Quickly set up LNMP as a sample.
 It will cover the following components:
 
 * Nginx as Web Server
-* MySQL database
+* MariaDB database
 * PHP-FPM through FastCGI
 * Python through WSGI
 * Supervisord
@@ -37,10 +36,10 @@ Step by Step
    $ bin/buildout
 7. FINGER CROSS...
 
-MySQL Dependences
-=================
+MariaDB Dependences
+===================
 
-MySQL 5.5 requirs CMake to build from source code.
+MariaDB 5.5 requirs CMake to build from source code.
 Make sure the CMake is installed in your system.
 
 * CMake
