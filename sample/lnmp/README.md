@@ -63,6 +63,11 @@ We need have the following lib installed in the system.
 For Ubuntu, there is NO openssl-dev package.
 We have to install libcurl4-openssl-dev instead.
 
+Here is yum command for CentOS::
+
+  $ sudo yum install bzip2-devel libjpeg-devel openssl-devel \
+  > libxml2-devel libpng-devel libmcrypt-devel freetype-devel gettext
+
 Nginx Dependences
 =================
 
