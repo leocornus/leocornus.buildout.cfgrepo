@@ -14,31 +14,31 @@ Step by Step
    Check the following dependeces section for details.
 1. get the bootstrap.py::
 
-  $ wget http://svn.zope.org/*checkout*/zc.buildout/trunk/bootstrap/bootstrap.py
+   $ wget http://svn.zope.org/*checkout*/zc.buildout/trunk/bootstrap/bootstrap.py
 
 2. link leocornus cfgrepo::
 
-  $ ln -s /PATH/TO/leocornus.buildout.cfgrepo
+   $ ln -s /PATH/TO/leocornus.buildout.cfgrepo
 
 3. start buildout.cfg::
 
-  $ vim buildout.cfg
+   $ vim buildout.cfg
 
 4. the buildout.cfg could be as simple as just 2 lines::
 
-  [buildout]
-  # extends from the base buildout config.
-  extends = buildout-base.cfg
-  
-  # tweak the setting for different environment, for example:
-  # - development server
-  # - local desktop
-  # - stage server
-  # - production server
+   [buildout]
+   # extends from the base buildout config.
+   extends = buildout-base.cfg
+   
+   # tweak the setting for different environment, for example:
+   # - development server
+   # - local desktop
+   # - stage server
+   # - production server
 
 5. execute the bootstrap.py::
 
-  $ python bootstrap.py
+   $ python bootstrap.py
 
 6. execute buildout::
 
@@ -47,16 +47,16 @@ Step by Step
 7. FINGER CROSS...
 8. Create the log folder::
 
-  $ mkdir var/log
+   $ mkdir var/log
 
 9. Create the php info page::
 
-  $  mkdir var/www
-  $  touch var/www/index.php
-  $  vim var/www/index.php
+   $  mkdir var/www
+   $  touch var/www/index.php
+   $  vim var/www/index.php
 
-  <?php
-  phpinfo();
+   <?php
+   phpinfo();
 
 MariaDB Dependences
 ===================
