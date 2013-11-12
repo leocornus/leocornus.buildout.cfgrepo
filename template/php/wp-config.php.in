@@ -1,0 +1,127 @@
+<?php
+/** Enable W3 Total Cache **/
+define('WP_CACHE', true); // Added by W3 Total Cache
+
+/**
+ * The base configurations of the WordPress.
+ *
+ **************************************************************************
+ * Do not try to create this file manually. Read the README.txt and run the
+ * web installer.
+ **************************************************************************
+ *
+ * This file has the following configurations: MySQL settings, Table Prefix,
+ * Secret Keys, WordPress Language, and ABSPATH.
+ *
+ * This file is used by the wp-config.php creation script during the
+ * installation.
+ *
+ * @package WordPress
+ */
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', '${:db_name}');
+
+/** MySQL database username */
+define('DB_USER', '${:db_user}');
+
+/** MySQL database password */
+define('DB_PASSWORD', '${:db_password}');
+
+/** MySQL hostname */
+define('DB_HOST', '${:db_host}:${:db_port}');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', '${:db_charset}');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+define('VHOST', 'no');
+$base = '/';
+define('DOMAIN_CURRENT_SITE', '${:domain_current_site}' );
+define('PATH_CURRENT_SITE', '/' );
+define('BLOGID_CURRENT_SITE', '1' );
+
+/**#@+
+ * Authentication Unique Keys.
+ *
+ * Change these to different unique phrases!
+ * You can generate these using the {@link http://api.wordpress.org/secret-key/1.1/ WordPress.org secret-key service}
+ *
+ * @since 2.6.0
+ */
+define('AUTH_KEY', '210cc7121e3ae3e21f6af9d3d9dd7f74e048a4a47d8fc55175eb158084ba2d8f');
+define('SECURE_AUTH_KEY', 'd45916e9558295b47aabfe55b07ba784ccdc5aebb1625fc469f79e88a1dc600c');
+define('LOGGED_IN_KEY', '07075047f2ceb591dec214e8edf50527512c6fe93bb26986058b7a457f317384');
+define('NONCE_KEY', '9403eb9422fa9ae37d22620f5865f0fe2aee545b325fb805a560a7283aa43c7f');
+define('AUTH_SALT', '165e58466bb4192c8f583b0828abb9ba8a00450bdc1c96a5a04f8be038679cae');
+define('LOGGED_IN_SALT', '1a0215632ee8b0a21abda57b76034ee4613a3a01f6ec5e2b2c3a91aa25a34580');
+define('SECURE_AUTH_SALT', '27fadf1335d4de746342549a064c3b4c2150c4595e07db4cd2ec9d0350506b87');
+define('NONCE_SALT', '{oCw!T7`{%+IJ3HKZKB[!SeK-G/:5:m,`zWX`=2hlh(v?J]_ fnWgHvJMuyjYxnh' );
+/**#@-*/
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix  = 'wp_';
+
+/**
+ * WordPress Localized Language, defaults to English.
+ *
+ * Change this to localize WordPress.  A corresponding MO file for the chosen
+ * language must be installed to wp-content/languages. For example, install
+ * de.mo to wp-content/languages and set WPLANG to 'de' to enable German
+ * language support.
+ */
+define ('WPLANG', '');
+
+// double check $base
+if( $base == 'BASE' )
+        die( 'Problem in wp-config.php - $base is set to BASE when it should be the path like "/" or "/blogs/"! Please fix it!' );
+
+// uncomment this to enable wp-content/sunrise.php support
+//define( 'SUNRISE', 'on' );
+
+// uncomment to move wp-content/blogs.dir to another relative path
+// remember to change WP_CONTENT too.
+// define( "UPLOADBLOGSDIR", "fileserver" );
+
+// If VHOST is 'yes' uncomment and set this to a URL to redirect if a blog does not exist or is a 404 on the main blog. (Useful if signup is disabled)
+// For example, the browser will redirect to http://examples.com/ for the following: define( 'NOBLOGREDIRECT', 'http://example.com/' );
+// define( 'NOBLOGREDIRECT', '' );
+// On a directory based install you can use the 404 handler.
+
+// Location of mu-plugins
+// define( 'WPMU_PLUGIN_DIR', '' );
+// define( 'WPMU_PLUGIN_URL', '' );
+// define( 'MUPLUGINDIR', 'wp-content/mu-plugins' );
+
+// Uncomment to disable the site admin bar
+//define( 'NOADMINBAR', 1 );
+
+define( "WP_USE_MULTIPLE_DB", false );
+
+define('WP_DEFAULT_THEME', 'default');
+
+/* That's all, stop editing! Happy blogging. */
+
+/** WordPress absolute path to the Wordpress directory. */
+if ( !defined('ABSPATH') )
+        define('ABSPATH', dirname(__FILE__) . '/');
+
+//define('ADMIN_COOKIE_PATH', '/');
+//define('COOKIE_DOMAIN', '');
+//define('COOKIEPATH', '');
+//define('SITECOOKIEPATH', '');
+
+define('WP_DEBUG', false);
+
+define('FORCE_SSL_LOGIN', ${:force_ssl_login});
+
+/** Sets up WordPress vars and included files. */
+require_once(ABSPATH . 'wp-settings.php');
+?>
