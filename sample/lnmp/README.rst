@@ -50,6 +50,15 @@ Step by Step
 
      $ bin/buildout install php-info
 
+What's Been Built and Setup
+===========================
+
+- PHP-FPM, Nginx, MariaDB, Supervisor
+- all config files are in folder **etc**
+- the document root is set to folder **var/www**
+- database is installed under folder **var/mariadb**
+- all log files in stored in folder **var/log**
+
 MariaDB Dependences
 ===================
 
