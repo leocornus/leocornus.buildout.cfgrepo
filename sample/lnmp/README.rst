@@ -46,14 +46,9 @@ Step by Step
 
 7. FINGER CROSS...
 
-9. Create the php info page::
+8. Install php-info part to generate the  PHP info page::
 
-     $  mkdir var/www
-     $  touch var/www/index.php
-     $  vim var/www/index.php
-
-     <?php
-     phpinfo();
+     $ bin/buildout install php-info
 
 MariaDB Dependences
 ===================
