@@ -45,9 +45,6 @@ Step by Step
      $ bin/buildout
 
 7. FINGER CROSS...
-8. Create the log folder::
-
-     $ mkdir var/log
 
 9. Create the php info page::
 
