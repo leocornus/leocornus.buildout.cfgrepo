@@ -58,6 +58,13 @@ What's Been Built and Setup
 - the document root is set to folder **var/www**
 - database is installed under folder **var/mariadb**
 - all log files in stored in folder **var/log**
+- shell scripts in folder **bin**
+
+  - supervisorctl
+  - supervisord
+  - mysql
+  - mysqldump
+  - mysqladmin
 
 MariaDB Dependences
 ===================
