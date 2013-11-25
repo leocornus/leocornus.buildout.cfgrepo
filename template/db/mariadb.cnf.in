@@ -38,14 +38,19 @@ socket              = ${:socket}
 pid_file            = ${:pid_file}
 datadir             = ${:datadir}
 
-key_buffer_size = 16K
-max_allowed_packet = 1M
-table_open_cache = 4
+#key_buffer_size = 16K
+key_buffer_size = ${:key_buffer_size}
+#max_allowed_packet = 1M
+max_allowed_packet = ${:max_allowed_packet}
+#table_open_cache = 4
+table_open_cache = ${:table_open_cache}
 sort_buffer_size = 64K
 read_buffer_size = 256K
 read_rnd_buffer_size = 256K
 net_buffer_length = 2K
 thread_stack = 128K
+# default value for max connection is 150
+max_connections = ${:max_connections}
 
 # Don't listen on a TCP/IP port at all. This can be a security enhancement,
 # if all processes that need to connect to mysqld run on the same host.
