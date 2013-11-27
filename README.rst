@@ -9,44 +9,48 @@ What's in
 
 I will try to include the following utilities:
 
- * MySQL database compile and build
- * MySQL database server setup utilities
- * SQLite3 compile and build
- * Nginx compile and build
- * Nginx database server setup utilities.
+* MySQL/MariaDB database compile and build
+* MySQL/MariaDB database server setup utilities
+* MySQL/MariaDB configuration
+* SQLite3 compile and build
+* Nginx compile and build
+* Nginx configuration for all kind of applications, 
+  including WordPress, MediaWiki, Django, etc.
+* PHP-FPM compile and build
+* PHP-FPM configuration
 
 How to use
 ==========
 
 cfgrepo is very easy to use.  You could try the following methods:
 
- * hard copy, download from GitHub and copy to your buildout facility.
- * symlink, clone from GitHub and symlink to your buildout folder.
- * submodule, adding cfgrepo as a submodule of your project.
+* hard copy, download from GitHub and copy to your buildout facility.
+* symlink, clone from GitHub and symlink to your buildout folder.
+* submodule, adding cfgrepo as a submodule of your project.
 
 git submodule and tag
 =====================
 
-Add cfgrepo as a submodule
+Add cfgrepo as a submodule::
 
-$ cd myproject
-$ git submodule add git://github.com/leocornus/leocornus.buildout.cfgrepo.git buildout/cfgrepo
-$ git commit -m "add cfgrepo as submodule" .
+  $ cd myproject
+  $ git submodule add git://github.com/leocornus/leocornus.buildout.cfgrepo.git buildout/cfgrepo
+  $ git commit -m "add cfgrepo as submodule" .
 
-Update to use a certian tag.
+Update to use a certain tag::
 
-$ cd buildout/cfgrepo
-$ git checkout v0.1
-$ cd ../..
-$ git add buildout/cfgrepo
-$ git commit -m "update to cfgrepo v0.1" buildout/cfgrepo
-$ git push
+  $ cd buildout/cfgrepo
+  $ git checkout v0.1
+  $ cd ../..
+  $ git add buildout/cfgrepo
+  $ git commit -m "update to cfgrepo v0.1" buildout/cfgrepo
+  $ git push
 
-Register and update submodule in your project.
+Register and update submodule in your project::
 
-$ cd myproject
-$ git submodule init
-$ git submodule update
+  $ cd myproject
+  $ git submodule init
+  $ git submodule update
 
 License
 =======
