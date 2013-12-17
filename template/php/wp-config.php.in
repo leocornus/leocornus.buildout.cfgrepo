@@ -129,4 +129,7 @@ define('FORCE_SSL_LOGIN', ${:force_ssl_login});
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/** Enable WordPress Pretty Permalinks with Nginx **/
+add_filter( 'got_rewrite', '__return_true', 999 );  
 ?>
