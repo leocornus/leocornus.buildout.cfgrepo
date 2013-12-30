@@ -33,7 +33,7 @@ socket              = ${:socket}
 
 # The MySQL server
 [mysqld]
-bind-address        = ${:bind-address}
+bind_address        = ${:bind_address}
 port                = ${:port}
 socket              = ${:socket}
 pid_file            = ${:pid_file}
