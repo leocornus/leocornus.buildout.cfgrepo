@@ -20,12 +20,12 @@ nodaemon = ${:nodaemon}
 nocleanup = ${:nocleanup} 
 
 [inet_http_server]
-port = ${:port}
+port = ${:host}:${:port}
 username = ${:username}
 password = ${:password}
 
 [supervisorctl]
-serverurl = http://${:port}
+serverurl = http://${:host}:${:port}
 username = ${:username}
 password = ${:password} 
 
