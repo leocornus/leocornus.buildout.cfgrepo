@@ -53,7 +53,7 @@
     -->
     <Connector port="${:http-connector-port}" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="8443" />
+               redirectPort="${:ssl-connector-port}" />
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -72,7 +72,7 @@
     -->
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector port="${:ajp-connector-port}" protocol="AJP/1.3" redirectPort="8443" />
+    <Connector port="${:ajp-connector-port}" protocol="AJP/1.3" redirectPort="${:ssl-connector-port}" />
 
 
     <!-- An Engine represents the entry point (within Catalina) that processes
