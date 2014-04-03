@@ -60,6 +60,14 @@ GNU General Public License Version 2
 Change Log
 ==========
 
+cfgrepo-0.4 (2014-04-03)
+-----------------------
+
+ - adding cfg to build node.js and MediaWiki Parsoid Service
+ - install Java
+ - install and config Tomcat
+ - install and config Trac
+
 0.3 (2013-10-31)
 ----------------
 
