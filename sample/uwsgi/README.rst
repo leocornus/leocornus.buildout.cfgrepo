@@ -1,6 +1,50 @@
 Buildout samples to build, deploy, and manage applications
 running on uWSGI.
 
+Build, Deploy, Init and Run Trac Projects
+=========================================
+
+Following the simple steps, 
+you will have a Trac project up and running in minutes.
+
+#. create **buildout.cfg** by extends from the 
+   **buildout-trac.cfg**::
+
+     [buildout]
+     extends = 
+         buildout-trac.cfg
+
+     [trac-wsgi-bin]
+     trac-project-dir = ${buildout:directory}/var/trac-projects
+
+     [users]
+     uwsgi = your_local_account
+
+     [ports]
+     supervisord = 8909
+     uwsgi = 8910
+
+     [hosts]
+     uwsgi = 10.10.10.1
+
+#. Bootstrap the buildout and execute it::
+
+     $ python bootstrap.py
+     $ bin/buildout
+
+#. Now you can create you first Trac project using the following 
+   command::
+
+     $ bin/trac-admin var/trac-projects/traconuwsgi initenv \
+     > 'Trac on uWSGI' sqlite:db/trac.db
+
+#. Start supervisord::
+
+     $ bin/supervisord
+     $ bin/supervisorctl
+     trac-on-uwsgi        RUNNING    pid 14940, uptime 0:11:45
+     supervisor>
+
 Simple Python WSGI Application
 ==============================
 
