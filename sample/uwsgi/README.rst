@@ -6,7 +6,8 @@ Simple Python WSGI Application
 
 How to build and run a very simple Python WSGI application on uWSGI.
 
-#. create buildout.cfg by extends from the buildout-quickstar.cfg::
+#. create **buildout.cfg** by extends from the 
+   **buildout-quickstar.cfg**::
 
      [buildout]
      extends = 
@@ -35,4 +36,5 @@ How to build and run a very simple Python WSGI application on uWSGI.
 Reference
 =========
 
-- `uWSGI Homepage <http://projects.unbit.it/uwsgi/>_`
+- `uWSGI Homepage <http://projects.unbit.it/uwsgi/>`_
+- `Supervisord Homepage <http://supervisord.org/>`_
