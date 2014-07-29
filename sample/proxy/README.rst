@@ -8,11 +8,8 @@ page, there are 3 types of Proxy servers:
 - Open proxy
 - Reverse proxy
 
-'''Forward Proxy'''
+**Forward Proxy**
 
 Squid_ is the best choice for Forward proxy server.
-
-
-'''References'''
 
 .. _Squid: http://www.squid-cache.org/
