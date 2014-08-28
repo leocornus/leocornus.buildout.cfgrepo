@@ -60,6 +60,8 @@ GNU General Public License Version 2
 Change Log
 ==========
 
+- `cfgrepo releae 0.5 <docs/cdgrepo-0.5.rst>`_
+
 cfgrepo-0.4 (2014-04-03)
 -----------------------
 
