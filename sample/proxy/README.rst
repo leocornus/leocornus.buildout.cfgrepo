@@ -12,4 +12,14 @@ page, there are 3 types of Proxy servers:
 
 Squid_ is the best choice for Forward proxy server.
 
+**Squid Basic**
+
+Once the buildout execute successfully, 
+we could find the squid server in folder **parts/squid-build/sbin**.
+Start a squid server by using the following command::
+
+  $ parts/squid-build/sbin/squid
+
+The default port is **3128**.
+
 .. _Squid: http://www.squid-cache.org/
