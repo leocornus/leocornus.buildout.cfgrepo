@@ -46,6 +46,20 @@ We can specify which version we want for a module::
 
   $ bin/bower install bootstrap#2.x
 
+How about private npm repo?
+---------------------------
+
+The npm_ repository is very good repository.
+Still, there are many benefits to create a private npm repo:
+
+- When npm_ is down or outage.
+- When you are working behind a firewall.
+
+Here are some good post talking about this topic.
+
+- `How to create a private npmjs repository`_
+- sinopia_ is a private npm repository server.
+
 .. _nodejs: http://nodejs.org
 .. _Parsoid: http://www.mediawiki.org/wiki/Parsoid
 .. _forever: https://github.com/nodejitsu/forever
@@ -53,3 +67,5 @@ We can specify which version we want for a module::
 .. _npm: https://www.npmjs.org/
 .. _bower: http://bower.io
 .. _bootstrap: http://getbootstrap.com/
+.. _How to create a private npmjs repository: http://www.clock.co.uk/blog/how-to-create-a-private-npmjs-repository
+.. _sinopia: https://www.npmjs.org/package/sinopia
