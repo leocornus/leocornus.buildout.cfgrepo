@@ -4,7 +4,7 @@ Running Trac on PostgreSQL in uWSGI
 Steps
 -----
 
-#. create build by extendsing `buildout-trac-postgre.cfg <buildout-trac-postgre.cfg>`_
+#. create build by extending `buildout-trac-postgres.cfg <buildout-trac-postgres.cfg>`_
 #. update users, ports, hosts
 #. bootstrap buildout execute buildout
 #. set datadir for postgresql
