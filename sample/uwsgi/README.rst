@@ -3,6 +3,7 @@ running on uWSGI.
 
 - `Build, Deploy, Init and Run Trac Projects`_
 - `Simple Python WSGI Application`_
+- `Trac on PostgreSQL in uWSGI <Trac-on-PostgreSQL-in-uWSGI.rst>`_
 - `PHP in uWSGI <PHP-in-uWSGI.rst>`_
 
 Build, Deploy, Init and Run Trac Projects
