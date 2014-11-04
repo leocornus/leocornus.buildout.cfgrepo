@@ -1,8 +1,12 @@
 Buildout samples to build, deploy, and manage applications
 running on uWSGI.
 
+- `Build, Deploy, Init and Run Trac Projects`_
+- `Simple Python WSGI Application`_
+- `PHP in uWSGI <PHP-in-uWSGI.rst>`_
+
 Build, Deploy, Init and Run Trac Projects
-=========================================
+-----------------------------------------
 
 Following the simple steps, 
 you will have a Trac project up and running in minutes.
@@ -46,7 +50,7 @@ you will have a Trac project up and running in minutes.
      supervisor>
 
 Simple Python WSGI Application
-==============================
+------------------------------
 
 How to build and run a very simple Python WSGI application on uWSGI.
 
@@ -78,7 +82,8 @@ How to build and run a very simple Python WSGI application on uWSGI.
      $ bin/supervisorctl
 
 Reference
-=========
+---------
 
 - `uWSGI Homepage <http://projects.unbit.it/uwsgi/>`_
 - `Supervisord Homepage <http://supervisord.org/>`_
+- `You Should Be Using Nginx + UWSGI <http://cramer.io/2013/06/27/serving-python-web-applications/>`_
