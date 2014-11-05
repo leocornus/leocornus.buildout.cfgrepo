@@ -47,3 +47,5 @@ whitelist =
 embed_files =
 
 embed_config =
+
+debug = ${:debug}
