@@ -7,4 +7,22 @@ The full details documentation could be found
 Building
 --------
 
-PHP need enable option **--enable-embed**
+PHP need enable option **--enable-embed** during compile and build.
+Once build success, you should see the following output,
+when execute **php-config**::
+
+  $ ${php-build:location}/bin/php-config --php-sapis
+  cli embed fpm cgi
+
+build profile for uWSGI
+
+buildout.cfg
+------------
+
+It is very easy to create a **buildout.cfg** file by simply extends
+the `buildout-php-in-uwsgi.cfg <buildout-php-in-uwsgi.cfg>`_.
+
+References
+----------
+
+- `Rumming anything on Nginx with uWSGI <http://metz.gehn.net/2013/02/running-anything-on-nginx-with-uwsgi/>`_ 
