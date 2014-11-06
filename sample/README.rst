@@ -17,6 +17,7 @@ Here is a list of samples.
 - `buildout sample to build, deploy, and manage apps running
   on uWSGI <uwsgi/README.rst>`_
 - `buildout for system admin works <sysadmin/README.rst>`_
+- `Explore the cache Servers <cache/README.rst>`_
 
 .. _Parsoid: http://www.mediawiki.org/wiki/Parsoid
 .. _Nginx: http://nginx.org/
