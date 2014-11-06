@@ -22,6 +22,8 @@ buildout.cfg
 It is very easy to create a **buildout.cfg** file by simply extends
 the `buildout-php-in-uwsgi.cfg <buildout-php-in-uwsgi.cfg>`_.
 
+We need explore new ways to build uWSGI and its plugins.
+
 References
 ----------
 
