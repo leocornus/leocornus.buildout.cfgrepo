@@ -8,12 +8,12 @@ What we have
 
 Here are the list of cache servers we covered:
 
-- redis and phpredis extension
+- redis_ and phpredis_ extension
 
 Samples
 -------
 
-Check the `cache sample folder <../sample/cache/README.rst>`_ for 
+Check the `cache sample folder <../../sample/cache/README.rst>`_ for 
 some typical use cases.
 
 .. _supervisor: https://github.com/Supervisor/supervisor
