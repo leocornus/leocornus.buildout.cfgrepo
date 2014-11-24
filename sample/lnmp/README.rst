@@ -104,3 +104,5 @@ Nginx Dependences
 Nginx depends on the following libs and packages:
 
 * PCRE for re-write module: libpcre3-dev
+
+.. _Nginx - Enable PHP-FPM Status Page: https://rtcamp.com/tutorials/php/fpm-status-page/
