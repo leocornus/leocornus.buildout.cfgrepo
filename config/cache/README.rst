@@ -9,6 +9,7 @@ What we have
 Here are the list of cache servers we covered:
 
 - redis_ and phpredis_ extension
+- memcached_
 
 Samples
 -------
@@ -19,3 +20,4 @@ some typical use cases.
 .. _supervisor: https://github.com/Supervisor/supervisor
 .. _redis: http://redis.io
 .. _phpredis: https://github.com/nicolasff/phpredis
+.. _memcached: http://memcached.org/
