@@ -7,6 +7,9 @@ Lists of cases
   buildout parts to build the redis_ server, generate the server
   config file, and manage the server under supervisor_.
 
+- `buildout-memcached-base.cfg <buildout-memcached-base.cfg>`_ 
+   provides the very basic config file for memcached_.
+
 - `buildout-php.cfg <buildout-php.cfg>`_ build the redis_ ready PHP
   on Nginx and managed by supervisor_.
 
@@ -14,4 +17,5 @@ References
 ----------
 
 .. _redis: http://redis.io
+.. _memcached: http://memcached.org/
 .. _supervisor: https://github.com/Supervisor/supervisor
