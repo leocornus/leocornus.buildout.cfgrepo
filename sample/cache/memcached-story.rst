@@ -19,7 +19,7 @@ Here is a quick sample::
   $ telnet 127.0.0.1 11211
   stats  -- to show the statistic info
 
-Here are the `1Memcached commands`_ you can use.
+Here are the `Memcached commands`_ you can use.
 
 .. _Memcached: http://memchched.org
 .. _Memcached on Wikipedia: http://en.wikipedia.org/wiki/Memcachedk
