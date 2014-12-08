@@ -10,6 +10,8 @@ Things we need install:
 - php-git_
 - Nginx for testing, optional.
 
+Check file `buildout-php.cfg <buildout-php.cfg>`_ for details.
+
 buildout sample
 ---------------
 
@@ -29,7 +31,7 @@ Here is a basic and simple buildout.cfg sample::
   nginx = 80
   
   [hosts]
-  frontend-hostname = php.git.test.com
+  frontend-hostname = localhost
   frontend-ip = 127.0.0.1
 
 Create a empty file named **buildout.cfg** and copy source code
@@ -37,6 +39,13 @@ to the file. And then run the following commands::
 
   $ python bootstrap.py
   $ bin/buildout
+
+Start supervisord::
+
+  $ sudo bin/supervisord
+
+Then the sample git php code will ready at page 
+http://localhost/phpgit.php.
   
 Build Errors
 ------------
