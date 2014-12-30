@@ -6,7 +6,9 @@ Zabbix Server Quick Start
 
 Most of the details buildout parts are in the base config file
 `<buildout-zabbix-server.cfg>`_.
-The **buildout.cfg** file will only have the local
+The **buildout.cfg** file will only have the params for your
+local environment.
+Here is a sample buildout.cfg::
 
   [buildout]
   extends =
