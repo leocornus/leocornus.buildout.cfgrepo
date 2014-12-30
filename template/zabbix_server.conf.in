@@ -20,6 +20,7 @@
 # Range: 1024-32767
 # Default:
 # ListenPort=10051
+ListenPort = ${:listen-port}
 
 ### Option: SourceIP
 #	Source IP address for outgoing connections.
@@ -197,6 +198,7 @@ DBPort=${:dbport}
 # ListenIP=0.0.0.0
 
 # ListenIP=127.0.0.1
+ListenIP = ${:listen-ip}
 
 ### Option: HousekeepingFrequency
 #	How often Zabbix will perform housekeeping procedure (in hours).
