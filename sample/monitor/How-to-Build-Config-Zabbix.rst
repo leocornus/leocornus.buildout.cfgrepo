@@ -30,7 +30,8 @@ Here is a sample buildout.cfg::
   mariadb = mariadb
 
   [ports]
-  mariadb = 9500
+  supervisord = 9500
+  mariadb = 9506
   nginx = 9580
   php-fpm = 9510
   zabbix-server = 10051
@@ -53,6 +54,24 @@ Init MariaDB Server
 
 MariaDB buildout config has a set of parts to initialize a 
 MariaDB Server. 
+The **init-mariadb** from file 
+`config/db/mariadb-conf.cfg <../../config/db/mariadb-conf.cfg>`_
+will install the database server::
+
+  $ bin/buildout -N install init-mariadb
+
+Make sure to read the output information carefully.
+
+Now we can start all apps by using supervisord::
+
+  $ mkdir var/log
+  $ sudo bin/supervisord
+  $ bin/supervisorctl
+
+The following command will help reset password for **root** db user::
+
+  $ bin/mysqladmin' -u root password 'new-password'
+  $ bin/mysqladmin' -u root -h localhost password 'new-password'
 
 Init Zabbix Database
 --------------------
