@@ -6,9 +6,10 @@ Here are list of things we are looking at:
 
 - Zabbix_
 
-**Quick Start**
+Quick Start
+-----------
 
-Check out `Monitor Samples <../../sample/monitor/README.rst>`_
+Check out `Monitor Samples <../../sample/monitor>`_
 for quick start ...
 
 .. _Zabbix: http://zabbix.com
