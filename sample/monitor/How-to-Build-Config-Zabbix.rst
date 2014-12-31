@@ -85,9 +85,11 @@ create database and database user::
   grant all on zabbix.* to 'zabbix'@'%' identified by 'zabbix';
   flush privileges;
 
-buildout install **zabbix-server-dbinit-base**::
+buildout install **zabbix-server-dbinit-mysql**.
+If you using Zabbix version 2.0 or higher, you need install
+part **zabbix-server-dbinit-mysql-2.0**::
 
-  $ bin/buildout -N install zabbix-server-dbinit-base
+  $ bin/buildout -N install zabbix-server-dbinit-mysql
 
 Setup Zabbix Web Interface
 --------------------------
