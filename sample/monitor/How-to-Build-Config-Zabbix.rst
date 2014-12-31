@@ -7,7 +7,7 @@ Here are the todo checklist:
 #. `Compile and Build`_ Zabbix, MariaDB, PHP, Nginx
 #. `Init MariaDB Server`_ get ready the MariaDB Server
 #. `Init Zabbix Database`_, including dump data
-#. configuration tweak for the Zabbix Web Interface.
+#. `Setup Zabbix Web Interface`_
 
 Compile and Build
 -----------------
@@ -76,4 +76,21 @@ The following command will help reset password for **root** db user::
 Init Zabbix Database
 --------------------
 
-now need initialize the database for Zabbix server::
+now need initialize the database for Zabbix server.
+
+create database and database user::
+
+  create database zabbix character set utf8;
+  grant all on zabbix.* to 'zabbix'@'localhost' identified by 'zabbix';
+  grant all on zabbix.* to 'zabbix'@'%' identified by 'zabbix';
+  flush privileges;
+
+buildout install **zabbix-server-dbinit-base**::
+
+  $ bin/buildout -N install zabbix-server-dbinit-base
+
+Setup Zabbix Web Interface
+--------------------------
+
+Zabbix come with a simple and easy-to-follow wizard to set up
+web interface.
