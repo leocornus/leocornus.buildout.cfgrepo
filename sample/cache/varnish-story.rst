@@ -14,11 +14,15 @@ Basic things from Varnish_
 - varnishadm, the admin console, which read secret from 
   /etc/varnish/secret
 - varnishlog, it will stream the logging message in memory 
+- varnishstat, statistics about varnish, `Varnishstat for dummies`_
+  is a good start.
 
 **hashing**
 
 - varnish is using hash key for each page.
 - hash key is generated based on URL and Host or IP.
+
+`Varnish for High Availability Web Servers`_
 
 How to decide the cache size?
 -----------------------------
@@ -39,3 +43,5 @@ Questions
 
 .. _Memcaches: http://memcached.org
 .. _Varnish: https://www.varnish-cache.org/
+.. _Varnishstat for dummies: http://kly.no/posts/2009_12_08__Varnishstat_for_dummies__.html
+.. _Varnish for High Availability Web Servers: https://www.lullabot.com/blog/article/configuring-varnish-high-availability-multiple-web-servers
