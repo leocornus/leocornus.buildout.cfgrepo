@@ -21,7 +21,7 @@ Here is a quick sample::
 
 Here are the `Memcached commands`_ you can use.
 
-.. _Memcached: http://memchched.org
+.. _Memcached: http://memcached.org
 .. _Memcached on Wikipedia: http://en.wikipedia.org/wiki/Memcachedk
 .. _Hardware Consideration: http://code.google.com/p/memcached/wiki/NewHardware
 .. _Memcached commands: https://code.google.com/p/memcached/wiki/NewCommands
