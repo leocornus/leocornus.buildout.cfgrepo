@@ -9,6 +9,8 @@ Here are some basic MariaDB system admin commands::
   MariaDB > SHOW GLOBAL STATUS;
   MariaDB > SET GLOBAL thread_cache_size = 16;
   MariaDB > SHOW GLOBAL STATUS LIKE 'threads%';
+  MariaDB > SHOW VARIABLES LIKE 'query%';
+  MariaDB > SHOW Warnings;
 
 Some numbers:
 
