@@ -9,13 +9,63 @@ Here are some basic MariaDB system admin commands::
   MariaDB > SHOW GLOBAL STATUS;
   MariaDB > SET GLOBAL thread_cache_size = 16;
   MariaDB > SHOW GLOBAL STATUS LIKE 'threads%';
+  MariaDB > SHOW GLOBAL STATUS LIKE 'innodb_buffer%';
   MariaDB > SHOW VARIABLES LIKE 'query%';
   MariaDB > SHOW Warnings;
 
-Some numbers:
+Some numbers::
 
   4GB 4294967295
   1GB 1073741823
+
+Production Parameters
+---------------------
+
+There are 2 main categories of parameters we can tweak the 
+database performance: general params and innodb params.
+
+General Params::
+
+  #key_buffer_size = 16K
+  key_buffer_size = 128M
+  #max_allowed_packet = 1M
+  max_allowed_packet = 64M
+  #table_open_cache = 4
+  table_open_cache = 4
+  sort_buffer_size = 64K
+  read_buffer_size = 256K
+  read_rnd_buffer_size = 256K
+  net_buffer_length = 2K
+  thread_stack = 128M
+  thread_cache_size = 16
+  query_cache_size = 1024M
+  join_buffer_size = 128M
+  
+  myisam_sort_buffer_size = 512M
+  # default value for max connection is 150
+  max_connections = 20000
+  max_heap_table_size = 128M
+  tmp_table_size = 128M
+  table_cache = 75000
+
+innodb params::
+
+  # You can set .._buffer_pool_size up to 50 - 80 %
+  # of RAM but beware of setting memory usage too high
+  #innodb_buffer_pool_size = 16M
+  innodb_buffer_pool_size = 1024M
+  #innodb_additional_mem_pool_size = 2M
+  # Set .._log_file_size to 25 % of buffer pool size
+  #innodb_log_file_size = 5M
+  innodb_log_buffer_size = 16M
+  #innodb_flush_log_at_trx_commit = 1
+  #innodb_lock_wait_timeout = 50
+  innodb_read_io_threads = 8
+  innodb_write_io_threads = 8
+
+This post `INNODB VARIABLES AND STATUS EXPLAINED 
+<http://www.fromdual.com/innodb-variables-and-status-explained>`_
+has a good calculation for the innodb_buffer_pool_size.
 
 MySQL Tunner Output
 -------------------
