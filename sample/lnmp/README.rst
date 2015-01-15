@@ -1,3 +1,14 @@
+LNMP Build and Configuration Examples
+
+Stories
+-------
+
+- `LNMP Quick Start`_
+- `PHP Story <php-story.rst>`_
+
+LNMP Quick Start
+----------------
+
 Quickly set up LNMP as a sample.
 It will cover the following components:
 
