@@ -17,12 +17,23 @@ allow_call_time_pass_reference = Off
 safe_mode = Off
 safe_mode_gid = Off
 expose_php = On
+; this available since PHP 5.3.9 for ticket #2426
+max_input_vars = 3000
 ;;;;;;;;
 ; memory.
 max_execution_time = 600
 max_input_time = 600
 memory_limit = 2048M
 ;;;;;;;;
+;;;;;;;
+; extensions
+; assume the extension so files are copied to default extension_dir
+; you can see the path on phpinfo page.
+; 
+; opcache extension. opcache is shipped with PHP since 5.5.0
+zend_extension = opcache
+; OPcache configuration
+${:opcache-settings}
 ; error handling.
 error_reporting = E_ALL & ~E_DEPRECATED
 display_errors = ${:display_errors}
