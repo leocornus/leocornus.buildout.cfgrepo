@@ -7,3 +7,4 @@ Tuning Stories
 --------------
 
 - `MariaDB Tuning Story <mariadb-tuning-story.rst>`_
+- `Strace Story <strace-story.rst>`_
