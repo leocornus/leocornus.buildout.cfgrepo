@@ -31,7 +31,7 @@ memory_limit = 2048M
 ; you can see the path on phpinfo page.
 ; 
 ; opcache extension. opcache is shipped with PHP since 5.5.0
-zend_extension = opcache
+zend_extension = opcache.so
 ; OPcache configuration
 ${:opcache-settings}
 ; error handling.
