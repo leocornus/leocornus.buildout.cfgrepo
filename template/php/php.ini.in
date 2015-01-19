@@ -17,8 +17,8 @@ allow_call_time_pass_reference = Off
 safe_mode = Off
 safe_mode_gid = Off
 expose_php = On
-; this available since PHP 5.3.9 for ticket #2426
-max_input_vars = 3000
+; this available since PHP 5.3.9 for ticket
+max_input_vars = ${:max_input_vars}
 ;;;;;;;;
 ; memory.
 max_execution_time = 600
