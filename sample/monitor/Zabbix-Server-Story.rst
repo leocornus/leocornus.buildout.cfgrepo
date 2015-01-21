@@ -1,11 +1,13 @@
-Zabbix Server Quick Start
--------------------------
+`Build and Config Zabbix Service <How-to-Build-Config-Zabbix.rst>`_
+> Zabbix Server Quick Start
 
 Here are the todo checklist:
 
 #. `Compile and Build`_ Zabbix, MariaDB, PHP, Nginx
+#. `Zabbix Server Config File`_
 #. `Init MariaDB Server`_ get ready the MariaDB Server
 #. `Init Zabbix Database`_, including dump data
+#. `Run Zabbix Server`_
 #. `Setup Zabbix Web Interface`_
 
 Compile and Build
@@ -48,6 +50,15 @@ run the following commands to compile and build::
   $ mkdir downloads
   $ bin/buildout
 
+Zabbix Server Configuration File
+--------------------------------
+
+The following options are important:
+
+- hosts:zabbix-server-ip
+- ports:zabbix-server
+- options to connect to database server.
+
 Init MariaDB Server
 -------------------
 
@@ -89,6 +100,11 @@ If you using Zabbix version 2.0 or higher, you need install
 part **zabbix-server-dbinit-mysql-2.0**::
 
   $ bin/buildout -N install zabbix-server-dbinit-mysql
+
+Run Zabbix Server
+-----------------
+
+The **-c** option will be used to specify the configuration files.
 
 Setup Zabbix Web Interface
 --------------------------

@@ -19,6 +19,7 @@ Special Features
 ----------------
 
 - Log File Monitoring: Monitoring and analyzing log files.
+- Web Monitoring...
 
 Overview
 --------
