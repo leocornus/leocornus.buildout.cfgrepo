@@ -3,7 +3,7 @@ Buildout Configurations for Load Balancer
 Stories
 -------
 
-- `HAProxy Build and Configuraion`_
+- `HAProxy Build and Configuration`_
 
 HAProxy Build and Configuration
 -------------------------------
