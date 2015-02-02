@@ -12,8 +12,12 @@ Overview and Algorithm
 The post `client ip persistence or source ip hash load balancing`_
 has a very good overview and explain about the possible algorithm.
 
+The `Load Balancing with HAProxy`_ has the basic ideas about HAProxy.
+Including the monitoring web interface.
+
 haproxy Source IP hash load-balancing
 -------------------------------------
 
 
 .. _client ip persistence or source ip hash load balancing: http://blog.haproxy.com/2013/04/22/client-ip-persistence-or-source-ip-hash-load-balancing/
+.. _Load Balancing with HAProxy: https://serversforhackers.com/haproxy/
