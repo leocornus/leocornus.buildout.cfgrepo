@@ -9,3 +9,4 @@ Tuning Stories
 - `MariaDB Client Only Story <mariadb-client-story.rst>`_
 - `MariaDB Tuning Story <mariadb-tuning-story.rst>`_
 - `Strace Story <strace-story.rst>`_
+- `MariaDB System Admin in a Nutshell <mariadb-sysadmin.rst>`_
