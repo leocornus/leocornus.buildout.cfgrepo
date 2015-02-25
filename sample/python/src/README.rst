@@ -8,7 +8,7 @@ for example::
   $ ln -s /path/to/python/module/my.package my.package
 
 Then in the **buildout.cfg** file, adding the following to
-buildout part::
+**buildout** part::
 
   ...
   develop =
