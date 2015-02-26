@@ -8,13 +8,36 @@ Get started the buildout recipe development is very simple.
 
 **Testing**
 
-Testing should always be the first step for any software development. Python has so many good tools for testing. And zc.buildout package provides a set of useful funtions for testing.
+Testing should always be the first step for any software development.
+Python has so many good tools for testing. 
+And zc.buildout package provides a set of 
+useful funtions for testing.
 
 Methods **constructor, install and update**
 
-Any class could be a zc.buildout recipe, as asson as it has 3 must-have methods: constructor (__init__), install, and update. And then the entry_points named zc.buildout will tell zc.buildout to load and execute the recipe.
+Any class could be a zc.buildout recipe, as asson as it has 
+3 must-have methods: constructor (__init__), install, and update. 
+And then the entry_points named zc.buildout will tell 
+zc.buildout to load and execute the recipe.
 
 entry_points sample in setup.py
+
+Execute Test Cases
+------------------
+
+Update the **test** part to tell **testrunner** to load your
+recipe egg::
+
+  [test]
+  eggs += 
+      leocornus.recipe.distribute
+
+Once you buildout done, we should have the **test** script in 
+**bin** folder. 
+The following command will run all test cases and show the
+progress in colored output::
+
+  bin/test -cvp
 
 Generate and upload eggs
 ------------------------
