@@ -4,4 +4,5 @@ around Python.
 Stories
 -------
 
+- `Basic Python Development Story <python-basic.rst>`_
 - `Buildout Recipe Development Story <buildout-recipe.rst>`_
