@@ -18,7 +18,7 @@ Here is a list of samples.
   and some tips for performance tuning.
 - `explore Ministoring services <monitor/README.rst>`_,
   mainly about Zabbix monitoring solution.
-- `buildout fot Python development <python/README.rst>`_
+- `buildout for Python development <python/README.rst>`_
 - `buildout sample to build, deploy, and manage apps running
   on uWSGI <uwsgi/README.rst>`_
 - `buildout for system admin works <sysadmin/README.rst>`_

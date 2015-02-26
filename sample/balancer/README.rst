@@ -1,3 +1,4 @@
+`Buildout Samples <../README.rst>`_ > 
 Samples for load balancer
 
 Stories
