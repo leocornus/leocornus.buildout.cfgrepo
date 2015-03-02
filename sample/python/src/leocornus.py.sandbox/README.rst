@@ -11,4 +11,4 @@ License
 Stories
 -------
 
-
+Check the `Package README <leocornus/py/sandbox/README.rst>`_ for stories.
