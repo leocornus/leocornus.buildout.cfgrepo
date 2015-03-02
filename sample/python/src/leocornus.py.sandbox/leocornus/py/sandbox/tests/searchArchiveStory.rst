@@ -52,8 +52,18 @@ Here we will get ready some files for testing...
   ...  * Plugin Name: Plugin One
   ...  * Version:  1.0.1
   ...  */
+  ...  # *comments**
   ... <?php
   ... phpinfo()""")
+  >>> f.close()
+
+Add one more file here.
+
+  >>> pFileTwo = os.path.join(pluginOne, 'pfile2.php')
+  >>> os.system("touch " + pFileTwo)
+  0
+  >>> f = open(pFileTwo, 'r+')
+  >>> f.write('some testing code')
   >>> f.close()
 
 Search and Archive
@@ -65,8 +75,10 @@ So we are uing the subprocess module.
 
   >>> import subprocess
   >>> import zipfile
+  >>> # search only one level deep...
   >>> plugins = subprocess.check_output("grep -l 'Plugin Name: ' " + 
   ... testFolder + "/*/*.php", 
+  ... # shell need to be True **
   ... shell=True)
   >>> for plugin in plugins.splitlines():
   ...     fileName = os.path.basename(plugin)
@@ -103,13 +115,15 @@ So we are uing the subprocess module.
   ...     files = zip.namelist()
   ...     len(files)
   ...     'pluginone/pfileone.php' in files
+  ...     'pluginone/pfile2.php' in files
   File Name: pfileone.php
   Plugin Name: pluginone
   Version: 1.0.1
   Archive Name: pluginone.1.0.1.zip
   False
   True
-  1
+  2
+  True
   True
 
 The ... seems not working here, might need set up one of the 
