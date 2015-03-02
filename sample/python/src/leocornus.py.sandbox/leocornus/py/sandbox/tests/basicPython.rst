@@ -17,3 +17,15 @@ Basic shutil module
 
     >>> import shutil
     >>> shutil.rmtree(testFolder)
+
+Basic String Operator
+---------------------
+
+Try the splitlines:
+
+  >>> lines = """line one
+  ... line two
+  ... line three
+  ... """
+  >>> lines.splitlines()
+  ['line one', 'line two', 'line three']

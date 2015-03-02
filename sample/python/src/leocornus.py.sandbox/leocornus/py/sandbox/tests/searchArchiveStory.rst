@@ -1,14 +1,16 @@
 Search and Archive Story
 ========================
 
-**Purpose**
+Purpose
+-------
 
 - Search a folder to identify certain patterns of string, such as 
   plugin name, version, extension name, etc.
 - Archive the folder based on name and version, the archive name
   will have pattern name-version.zip
 
-**Preparing Testing Folder**
+Preparing Testing Folder
+------------------------
 
 Get ready a test folder.
 All testing activities will happen in this folder.
@@ -23,11 +25,100 @@ At the end will remove the whole folder as clean up.
   >>> os.path.isdir(testFolder)
   True
 
-**Preparing Testing Files**
+Preparing Testing Files
+-----------------------
 
 We will need the following files for testing.
 
-**Remove Testing Folder**
+- WordPress Plugins
+
+**WordPress Plugin**
+
+The following WordPress file header identified as 
+a WordPress Plugin::
+
+  Plugin Name: name of plugin
+  Version:  2.1.1
+
+Here we will get ready some files for testing...
+
+  >>> pluginOne = os.path.join(testFolder, 'pluginone')
+  >>> os.mkdir(pluginOne)
+  >>> pFileOne = os.path.join(pluginOne, 'pfileone.php')
+  >>> os.system("touch " + pFileOne)
+  0
+  >>> f = open(pFileOne, 'r+')
+  >>> f.write("""/**
+  ...  * Plugin Name: Plugin One
+  ...  * Version:  1.0.1
+  ...  */
+  ... <?php
+  ... phpinfo()""")
+  >>> f.close()
+
+Search and Archive
+------------------
+
+Search the test folder to find certain string patterns.
+The method **os.system** will not return the result.
+So we are uing the subprocess module.
+
+  >>> import subprocess
+  >>> import zipfile
+  >>> plugins = subprocess.check_output("grep -l 'Plugin Name: ' " + 
+  ... testFolder + "/*/*.php", 
+  ... shell=True)
+  >>> for plugin in plugins.splitlines():
+  ...     fileName = os.path.basename(plugin)
+  ...     print """File Name: %s""" % fileName
+  ...     pluginDir = os.path.dirname(plugin)
+  ...     # print """Plugin Dir: %s""" % pluginDir
+  ...     pluginName = os.path.basename(pluginDir)
+  ...     print """Plugin Name: %s""" % pluginName
+  ...     # extract the version number from the plugin file.
+  ...     # try to using sed or grep
+  ...     version = subprocess.check_output("grep -oE 'Version: .*' " 
+  ...     + plugin, shell=True)
+  ...     version = version.strip().split(":")
+  ...     version = version[1].strip()
+  ...     print """Version: %s""" % version
+  ...     # get ready the archive name.
+  ...     archiveName = """%s.%s.zip""" % (pluginName, version)
+  ...     print """Archive Name: %s""" % archiveName
+  ...     # archive the plugin.
+  ...     # check file exist o not.
+  ...     archivePath = os.path.join(testFolder, archiveName)
+  ...     os.path.exists(archivePath)
+  ...     # zip the plugin dir
+  ...     zip = zipfile.ZipFile(archivePath, "w", 
+  ...        compression=zipfile.ZIP_DEFLATED)
+  ...     os.chdir(testFolder)
+  ...     for dirpath, dirnames, filenames in os.walk('./' + pluginName):
+  ...         for name in filenames:
+  ...             path = os.path.normpath(os.path.join(dirpath, name))
+  ...             if os.path.isfile(path):
+  ...                 zip.write(path, path)
+  ...     zip.close()
+  ...     os.path.exists(archivePath)
+  ...     files = zip.namelist()
+  ...     len(files)
+  ...     'pluginone/pfileone.php' in files
+  File Name: pfileone.php
+  Plugin Name: pluginone
+  Version: 1.0.1
+  Archive Name: pluginone.1.0.1.zip
+  False
+  True
+  1
+  True
+
+The ... seems not working here, might need set up one of the 
+option flag::
+
+  Plugin Dir: /home/.../testfolder/pluginone
+
+Remove Testing Folder
+---------------------
 
 remove the whole testing folder.
 
