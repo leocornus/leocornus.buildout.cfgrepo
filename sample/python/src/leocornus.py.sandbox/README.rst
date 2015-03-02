@@ -3,10 +3,10 @@ leocornus.py.sandbox
 
 The play ground for learning Python language.
 
-Licence
+License
 -------
 
-`GPL licence <LICENCE.GPL>`_
+`GPL license <LICENSE.GPL>`_
 
 Stories
 -------
