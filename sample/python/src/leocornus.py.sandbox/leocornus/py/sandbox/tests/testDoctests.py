@@ -37,6 +37,13 @@ def test_suite():
             ),
         )
 
+    suite.addTest(
+        DocFileSuite(
+            'tests/searchArchiveStory.rst',
+            package='leocornus.py.sandbox',
+            ),
+        )
+
     # hold this for now, we might not depend on fabric.
     #suite.addTest(
     #    DocFileSuite(
