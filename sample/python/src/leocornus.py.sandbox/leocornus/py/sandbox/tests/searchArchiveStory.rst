@@ -25,12 +25,32 @@ At the end will remove the whole folder as clean up.
   >>> os.path.isdir(testFolder)
   True
 
+General Functions
+-----------------
+
+We will define some general functions for re-use.
+Here are some ideas:
+
+- function to prepare testing folder and files.
+- function to archive a file in zip format.
+- utility function to print out some information for verifying.
+
+utility function to create a file in a folder.
+
+  >>> def createFile(folder, filename, content):
+  ...     fullName = os.path.join(folder, filename)
+  ...     os.system("touch " + fullName)
+  ...     f = open(fullName, 'r+')
+  ...     f.write(content)
+  ...     f.close()
+
 Preparing Testing Files
 -----------------------
 
 We will need the following files for testing.
 
 - WordPress Plugins
+- WordPress Themes
 
 **WordPress Plugin**
 
@@ -44,27 +64,27 @@ Here we will get ready some files for testing...
 
   >>> pluginOne = os.path.join(testFolder, 'pluginone')
   >>> os.mkdir(pluginOne)
-  >>> pFileOne = os.path.join(pluginOne, 'pfileone.php')
-  >>> os.system("touch " + pFileOne)
-  0
-  >>> f = open(pFileOne, 'r+')
-  >>> f.write("""/**
+  >>> createFile(pluginOne, 'pfileone.php', 
+  ... """/**
   ...  * Plugin Name: Plugin One
   ...  * Version:  1.0.1
   ...  */
   ...  # *comments**
   ... <?php
   ... phpinfo()""")
-  >>> f.close()
 
 Add one more file here.
 
-  >>> pFileTwo = os.path.join(pluginOne, 'pfile2.php')
-  >>> os.system("touch " + pFileTwo)
-  0
-  >>> f = open(pFileTwo, 'r+')
-  >>> f.write('some testing code')
-  >>> f.close()
+  >>> createFile(pluginOne, 'pfile2.php', 'some testing code')
+  >>> createFile(pluginOne, 'pfile3.php', 'some testing code 3')
+
+**WordPress Theme**
+
+The following WordPress file header in file **style.css** 
+identified as a WordPress theme::
+
+  Theme Name: the theme name
+  Version: 3.1.0
 
 Search and Archive
 ------------------
@@ -117,13 +137,15 @@ So we are uing the subprocess module.
   ...     len(files)
   ...     'pluginone/pfileone.php' in files
   ...     'pluginone/pfile2.php' in files
+  ...     'pluginone/pfile3.php' in files
   File Name: pfileone.php
   Plugin Name: pluginone
   Version: 1.0.1
   Archive Name: pluginone.1.0.1.zip
   False
   True
-  2
+  3
+  True
   True
   True
 
