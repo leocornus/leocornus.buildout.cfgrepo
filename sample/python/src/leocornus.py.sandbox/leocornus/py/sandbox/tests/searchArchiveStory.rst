@@ -44,6 +44,8 @@ utility function to create a file in a folder.
   ...     f.write(content)
   ...     f.close()
 
+utility function to archive a folder
+
 Preparing Testing Files
 -----------------------
 
@@ -73,10 +75,14 @@ Here we will get ready some files for testing...
   ... <?php
   ... phpinfo()""")
 
-Add one more file here.
+Add more files here for testing.
 
   >>> createFile(pluginOne, 'pfile2.php', 'some testing code')
   >>> createFile(pluginOne, 'pfile3.php', 'some testing code 3')
+  >>> pluginOneCss = os.path.join(pluginOne, 'css')
+  >>> os.mkdir(pluginOneCss)
+  >>> createFile(pluginOneCss, 'styles.css', 'styles')
+  >>> createFile(pluginOneCss, 'print.css', 'print styles')
 
 **WordPress Theme**
 
@@ -138,13 +144,15 @@ So we are uing the subprocess module.
   ...     'pluginone/pfileone.php' in files
   ...     'pluginone/pfile2.php' in files
   ...     'pluginone/pfile3.php' in files
+  ...     'pluginone/css/styles.css' in files
   File Name: pfileone.php
   Plugin Name: pluginone
   Version: 1.0.1
   Archive Name: pluginone.1.0.1.zip
   False
   True
-  3
+  5
+  True
   True
   True
   True
