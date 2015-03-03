@@ -75,11 +75,11 @@ So we are uing the subprocess module.
 
   >>> import subprocess
   >>> import zipfile
-  >>> # search only one level deep...
+  >>> # search only one level deep in the testFolder
   >>> plugins = subprocess.check_output("grep -l 'Plugin Name: ' " + 
-  ... testFolder + "/*/*.php", 
-  ... # shell need to be True **
-  ... shell=True)
+  ...     testFolder + "/*/*.php", 
+  ...     # shell need to be True **
+  ...     shell=True)
   >>> for plugin in plugins.splitlines():
   ...     fileName = os.path.basename(plugin)
   ...     print """File Name: %s""" % fileName
@@ -90,7 +90,7 @@ So we are uing the subprocess module.
   ...     # extract the version number from the plugin file.
   ...     # try to using sed or grep
   ...     version = subprocess.check_output("grep -oE 'Version: .*' " 
-  ...     + plugin, shell=True)
+  ...                                       + plugin, shell=True)
   ...     version = version.strip().split(":")
   ...     version = version[1].strip()
   ...     print """Version: %s""" % version
@@ -105,7 +105,8 @@ So we are uing the subprocess module.
   ...     zip = zipfile.ZipFile(archivePath, "w", 
   ...        compression=zipfile.ZIP_DEFLATED)
   ...     os.chdir(testFolder)
-  ...     for dirpath, dirnames, filenames in os.walk('./' + pluginName):
+  ...     for dirpath, dirnames, filenames in os.walk('./' + 
+  ...                                                 pluginName):
   ...         for name in filenames:
   ...             path = os.path.normpath(os.path.join(dirpath, name))
   ...             if os.path.isfile(path):
