@@ -36,6 +36,8 @@ Here are some ideas:
 - utility function to print out some information for verifying.
 
 utility function to create a file in a folder.
+There parameters: folder path, filename, and content for the file.
+There is no return value for this function.
 
   >>> def createFile(folder, filename, content):
   ...     fullName = os.path.join(folder, filename)
@@ -44,7 +46,28 @@ utility function to create a file in a folder.
   ...     f.write(content)
   ...     f.close()
 
-utility function to archive a folder
+utility function to archive a folder.
+There parameters:
+
+:archivePath: the full path the the archive file.
+:rootFolder: the parent folder in full path of the source folder
+:folderName: the name of the folder in the rootFolder.
+
+Return value: the archive file as a object
+
+  >>> def archiveFolder(archivePath, rootFolder, folderName):
+  ...     # zip the plugin dir
+  ...     zip = zipfile.ZipFile(archivePath, "w", 
+  ...        compression=zipfile.ZIP_DEFLATED)
+  ...     os.chdir(rootFolder)
+  ...     for dirpath, dirnames, filenames in os.walk('./' + 
+  ...                                                 folderName):
+  ...         for name in filenames:
+  ...             path = os.path.normpath(os.path.join(dirpath, name))
+  ...             if os.path.isfile(path):
+  ...                 zip.write(path, path)
+  ...     zip.close()
+  ...     return zip
 
 Preparing Testing Files
 -----------------------
@@ -132,16 +155,7 @@ So we are uing the subprocess module.
   ...     archivePath = os.path.join(testFolder, archiveName)
   ...     os.path.exists(archivePath)
   ...     # zip the plugin dir
-  ...     zip = zipfile.ZipFile(archivePath, "w", 
-  ...        compression=zipfile.ZIP_DEFLATED)
-  ...     os.chdir(testFolder)
-  ...     for dirpath, dirnames, filenames in os.walk('./' + 
-  ...                                                 pluginName):
-  ...         for name in filenames:
-  ...             path = os.path.normpath(os.path.join(dirpath, name))
-  ...             if os.path.isfile(path):
-  ...                 zip.write(path, path)
-  ...     zip.close()
+  ...     zip = archiveFolder(archivePath, testFolder, pluginName)
   ...     os.path.exists(archivePath)
   ...     files = zip.namelist()
   ...     len(files)
