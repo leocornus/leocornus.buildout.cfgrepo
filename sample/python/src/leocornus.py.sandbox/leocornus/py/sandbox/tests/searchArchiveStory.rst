@@ -1,6 +1,9 @@
 Search and Archive Story
 ========================
 
+.. contents:: Table of Contents
+   :depth: 5
+
 Purpose
 -------
 
