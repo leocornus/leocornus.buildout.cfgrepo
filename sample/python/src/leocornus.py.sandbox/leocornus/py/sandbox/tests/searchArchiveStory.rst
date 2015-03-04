@@ -12,6 +12,10 @@ Purpose
 - Archive the folder based on name and version, the archive name
   will have pattern name-version.zip
 
+Here are list of supported archive types::
+
+- 
+
 Preparing Testing Folder
 ------------------------
 
@@ -75,12 +79,8 @@ Return value: the archive file as a object
 Preparing Testing Files
 -----------------------
 
-We will need the following files for testing.
-
-- WordPress Plugins
-- WordPress Themes
-
-**WordPress Plugin**
+WordPress Plugin
+~~~~~~~~~~~~~~~~
 
 The following WordPress file header identified as 
 a WordPress Plugin::
@@ -114,13 +114,16 @@ Add subfolder css and add some styles.
   >>> createFile(pluginOneCss, 'styles.css', 'styles')
   >>> createFile(pluginOneCss, 'print.css', 'print styles')
 
-**WordPress Theme**
+WordPress Theme
+~~~~~~~~~~~~~~~
 
 The following WordPress file header in file **style.css** 
 identified as a WordPress theme::
 
   Theme Name: the theme name
   Version: 3.1.0
+
+Create testing folders and files for WordPress theme.
 
 Search and Archive
 ------------------
@@ -136,6 +139,9 @@ So we are uing the subprocess module.
   ...     testFolder + "/*/*.php", 
   ...     # shell need to be True **
   ...     shell=True)
+
+Archive Plugins
+
   >>> for plugin in plugins.splitlines():
   ...     fileName = os.path.basename(plugin)
   ...     print """File Name: %s""" % fileName
