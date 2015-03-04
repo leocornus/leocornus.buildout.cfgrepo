@@ -12,9 +12,10 @@ Purpose
 - Archive the folder based on name and version, the archive name
   will have pattern name-version.zip
 
-Here are list of supported archive types::
+Here are list of supported archive types:
 
-- 
+- WordPress plugin
+- WordPress Theme
 
 Preparing Testing Folder
 ------------------------
@@ -125,6 +126,30 @@ identified as a WordPress theme::
 
 Create testing folders and files for WordPress theme.
 
+  >>> themeOne = os.path.join(testFolder, 'themeone')
+  >>> os.mkdir(themeOne)
+  >>> os.path.isdir(themeOne)
+  True
+
+Create the theme style.css, which tells this is a WordPress theme.
+
+  >>> data = """/**
+  ...  * Theme Name: theme one
+  ...  * Theme URI: http://www.themeone.com
+  ...  * Version: 2.3
+  ...  */
+  ... some other infomation **"""
+  >>> createFile(themeOne, 'style.css', data)
+
+More files for theme one.
+
+  >>> createFile(themeOne, 'tfileone.php', 'file one php')
+  >>> createFile(themeOne, 'tfiletwo.php', 'file two php')
+  >>> themeOneImage = os.path.join(themeOne, 'image')
+  >>> os.mkdir(themeOneImage)
+  >>> createFile(themeOneImage, 'imgone.jpg', 'image one')
+  >>> createFile(themeOneImage, 'imgtwo.jpg', 'image two')
+
 Search and Archive
 ------------------
 
@@ -134,13 +159,17 @@ So we are uing the subprocess module.
 
   >>> import subprocess
   >>> import zipfile
-  >>> # search only one level deep in the testFolder
-  >>> plugins = subprocess.check_output("grep -l 'Plugin Name: ' " + 
-  ...     testFolder + "/*/*.php", 
-  ...     # shell need to be True **
-  ...     shell=True)
 
-Archive Plugins
+Grep the testing folder to find eather plugins or themes.
+We only search one level deep in the testing folder.
+
+  >>> pG = "grep -l 'Plugin Name: ' " + testFolder + "/*/*.php" #**
+  >>> plugins = subprocess.check_output(pG, shell=True)
+  >>> tG = "grep -l 'Theme Name: ' " + testFolder + "/*/style.css"#**
+  >>> themes = subprocess.check_output(tG, shell=True)
+
+Archive Plugin
+~~~~~~~~~~~~~~
 
   >>> for plugin in plugins.splitlines():
   ...     fileName = os.path.basename(plugin)
@@ -183,6 +212,12 @@ Archive Plugins
   True
   True
   True
+
+Archive Theme
+~~~~~~~~~~~~~
+
+Questions TODOs
+---------------
 
 The ... seems not working here, might need set up one of the 
 option flag::
