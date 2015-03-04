@@ -43,6 +43,9 @@ Here are some ideas:
 - function to archive a file in zip format.
 - utility function to print out some information for verifying.
 
+createFile
+~~~~~~~~~~
+
 utility function to create a file in a folder.
 There parameters: folder path, filename, and content for the file.
 There is no return value for this function.
@@ -53,6 +56,9 @@ There is no return value for this function.
   ...     f = open(fullName, 'r+')
   ...     f.write(content)
   ...     f.close()
+
+archiveFolder
+~~~~~~~~~~~~~
 
 utility function to archive a folder.
 There parameters:
@@ -77,6 +83,42 @@ Return value: the archive file as a object
   ...     zip.close()
   ...     return zip
 
+extractInfo
+~~~~~~~~~~~
+
+utility function to extract a set of information from 
+the given file full path.
+
+Parameters:
+
+Returns:
+
+  >>> def extractInfo(fullFilePath):
+  ...     fileName = os.path.basename(fullFilePath)
+  ...     #print """File Name: %s""" % fileName
+  ...     dirName = os.path.dirname(fullFilePath)
+  ...     #print """Dir Name: %s""" % dirName 
+  ...     folderName = os.path.basename(dirName)
+  ...     #print """Folder Name: %s""" % folderName
+  ...     # extract the version number from the plugin file.
+  ...     # try to using sed or grep
+  ...     grepPattern = "grep -oE 'Version: .*' " + fullFilePath
+  ...     version = subprocess.check_output(grepPattern, shell=True)
+  ...     version = version.strip().split(":")
+  ...     version = version[1].strip()
+  ...     #print """Version: %s""" % version
+  ...     # get ready the archive name.
+  ...     archiveName = """%s.%s.zip""" % (folderName, version)
+  ...     #print """Archive Name: %s""" % archiveName
+  ...     info = {
+  ...       'fileName' : fileName,
+  ...       'dirName' : dirName,
+  ...       'folderName' : folderName,
+  ...       'version' : version,
+  ...       'archiveName' : archiveName,
+  ...     }
+  ...     return info
+
 Preparing Testing Files
 -----------------------
 
@@ -93,14 +135,14 @@ Here we will get ready some files for testing...
 
   >>> pluginOne = os.path.join(testFolder, 'pluginone')
   >>> os.mkdir(pluginOne)
-  >>> createFile(pluginOne, 'pfileone.php', 
-  ... """/**
+  >>> data = """/**
   ...  * Plugin Name: Plugin One
   ...  * Version:  1.0.1
   ...  */
   ...  # *comments**
   ... <?php
-  ... phpinfo()""")
+  ... phpinfo()"""
+  >>> createFile(pluginOne, 'pfileone.php', data)
 
 Add more files here for testing.
 Here are files in pluginOne folder.
@@ -161,6 +203,11 @@ So we are uing the subprocess module.
   >>> import zipfile
 
 Grep the testing folder to find eather plugins or themes.
+Here are the grep patterns for WordPress plugin and theme::
+
+  $ grep -l 'Plugin Name: ' /full/path/plugins/*/*.php
+  $ grep -l 'Theme Name: ' /full/path/themes/*/style.css
+
 We only search one level deep in the testing folder.
 
   >>> pG = "grep -l 'Plugin Name: ' " + testFolder + "/*/*.php" #**
@@ -172,28 +219,21 @@ Archive Plugin
 ~~~~~~~~~~~~~~
 
   >>> for plugin in plugins.splitlines():
-  ...     fileName = os.path.basename(plugin)
-  ...     print """File Name: %s""" % fileName
-  ...     pluginDir = os.path.dirname(plugin)
+  ...     # the plugin already has full path, as we grep the 
+  ...     # full path pattern.
+  ...     info = extractInfo(plugin)
+  ...     print """File Name: %s""" % info['fileName']
   ...     # print """Plugin Dir: %s""" % pluginDir
-  ...     pluginName = os.path.basename(pluginDir)
-  ...     print """Plugin Name: %s""" % pluginName
-  ...     # extract the version number from the plugin file.
-  ...     # try to using sed or grep
-  ...     version = subprocess.check_output("grep -oE 'Version: .*' " 
-  ...                                       + plugin, shell=True)
-  ...     version = version.strip().split(":")
-  ...     version = version[1].strip()
-  ...     print """Version: %s""" % version
-  ...     # get ready the archive name.
-  ...     archiveName = """%s.%s.zip""" % (pluginName, version)
-  ...     print """Archive Name: %s""" % archiveName
+  ...     print """Plugin Name: %s""" % info['folderName']
+  ...     print """Version: %s""" % info['version']
+  ...     print """Archive Name: %s""" % info['archiveName']
   ...     # archive the plugin.
   ...     # check file exist o not.
-  ...     archivePath = os.path.join(testFolder, archiveName)
+  ...     archivePath = os.path.join(testFolder, info['archiveName'])
   ...     os.path.exists(archivePath)
   ...     # zip the plugin dir
-  ...     zip = archiveFolder(archivePath, testFolder, pluginName)
+  ...     zip = archiveFolder(archivePath, testFolder, 
+  ...                         info['folderName'])
   ...     os.path.exists(archivePath)
   ...     files = zip.namelist()
   ...     len(files)
@@ -215,6 +255,38 @@ Archive Plugin
 
 Archive Theme
 ~~~~~~~~~~~~~
+
+  >>> for theme in themes.splitlines():
+  ...     info = extractInfo(theme)
+  ...     print """File Name: %s""" % info['fileName']
+  ...     # print """Theme Dir: %s""" % pluginDir
+  ...     print """Theme Name: %s""" % info['folderName']
+  ...     print """Version: %s""" % info['version']
+  ...     print """Archive Name: %s""" % info['archiveName']
+  ...     # archive the Theme.
+  ...     archivePath = os.path.join(testFolder, info['archiveName'])
+  ...     os.path.exists(archivePath)
+  ...     # zip the plugin dir
+  ...     zip = archiveFolder(archivePath, testFolder, 
+  ...                         info['folderName'])
+  ...     os.path.exists(archivePath)
+  ...     files = zip.namelist()
+  ...     len(files)
+  ...     'themeone/style.css' in files
+  ...     'themeone/tfileone.php' in files
+  ...     'themeone/tfiletwo.php' in files
+  ...     'themeone/image/imgone.jpg' in files
+  File Name: style.css
+  Theme Name: themeone
+  Version: 2.3
+  Archive Name: themeone.2.3.zip
+  False
+  True
+  5
+  True
+  True
+  True
+  True
 
 Questions TODOs
 ---------------
