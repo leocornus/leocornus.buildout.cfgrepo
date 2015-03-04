@@ -76,9 +76,13 @@ Here we will get ready some files for testing...
   ... phpinfo()""")
 
 Add more files here for testing.
+Here are files in pluginOne folder.
 
   >>> createFile(pluginOne, 'pfile2.php', 'some testing code')
   >>> createFile(pluginOne, 'pfile3.php', 'some testing code 3')
+
+Add subfolder css and add some styles.
+ 
   >>> pluginOneCss = os.path.join(pluginOne, 'css')
   >>> os.mkdir(pluginOneCss)
   >>> createFile(pluginOneCss, 'styles.css', 'styles')
@@ -169,5 +173,10 @@ remove the whole testing folder.
 
   >>> import shutil
   >>> shutil.rmtree(testFolder)
+
+now verify testFolder is removed.
+
   >>> os.path.isdir(testFolder)
+  False
+  >>> os.path.isfile(testFolder)
   False
