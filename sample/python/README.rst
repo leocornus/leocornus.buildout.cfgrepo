@@ -7,4 +7,4 @@ Stories
 
 - `Basic Python Development Story <python-basic.rst>`_
 - `Buildout Recipe Development Story <buildout-recipe.rst>`_
-- `Sandbox to Learn Python Language <src/leocornus.py.sandbox/README.rst`_
+- `Sandbox to Learn Python Language <src/leocornus.py.sandbox/README.rst>`_
