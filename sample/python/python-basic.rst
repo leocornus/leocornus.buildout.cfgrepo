@@ -38,3 +38,11 @@ folder::
 
 The **test** script will execute all unit test cases in **src** 
 folder.
+
+Test Runner
+-----------
+
+Some basic commands::
+
+  bin/test -cvp   # execute tests with colored detail process
+  bin/test -cvpD  # -D will load debugger when test failed...
