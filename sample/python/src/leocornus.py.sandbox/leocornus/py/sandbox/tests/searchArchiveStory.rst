@@ -223,34 +223,46 @@ Archive Plugin
   ...     # full path pattern.
   ...     info = extractInfo(plugin)
   ...     print """File Name: %s""" % info['fileName']
-  ...     # print """Plugin Dir: %s""" % pluginDir
+  File Name: pfileone.php
+
+  ...     print """Plugin Dir: %s""" % info['dirName'] 
+  Plugin Dir: /.../pluginone
+
   ...     print """Plugin Name: %s""" % info['folderName']
+  Plugin Name: pluginone
+
   ...     print """Version: %s""" % info['version']
+  Version: 1.0.1
+
   ...     print """Archive Name: %s""" % info['archiveName']
+  Archive Name: pluginone.1.0.1.zip
+
   ...     # archive the plugin.
   ...     # check file exist o not.
   ...     archivePath = os.path.join(testFolder, info['archiveName'])
   ...     os.path.exists(archivePath)
+  False
+
   ...     # zip the plugin dir
   ...     zip = archiveFolder(archivePath, testFolder, 
   ...                         info['folderName'])
   ...     os.path.exists(archivePath)
+  True
+
   ...     files = zip.namelist()
   ...     len(files)
-  ...     'pluginone/pfileone.php' in files
-  ...     'pluginone/pfile2.php' in files
-  ...     'pluginone/pfile3.php' in files
-  ...     'pluginone/css/styles.css' in files
-  File Name: pfileone.php
-  Plugin Name: pluginone
-  Version: 1.0.1
-  Archive Name: pluginone.1.0.1.zip
-  False
-  True
   5
+
+  ...     'pluginone/pfileone.php' in files
   True
+
+  ...     'pluginone/pfile2.php' in files
   True
+
+  ...     'pluginone/pfile3.php' in files
   True
+
+  ...     'pluginone/css/styles.css' in files
   True
 
 Archive Theme
@@ -259,33 +271,45 @@ Archive Theme
   >>> for theme in themes.splitlines():
   ...     info = extractInfo(theme)
   ...     print """File Name: %s""" % info['fileName']
-  ...     # print """Theme Dir: %s""" % pluginDir
+  File Name: style.css
+
+  ...     print """Theme Dir: %s""" % info['dirName']
+  Theme Dir: /.../themeone
+
   ...     print """Theme Name: %s""" % info['folderName']
+  Theme Name: themeone
+
   ...     print """Version: %s""" % info['version']
+  Version: 2.3
+
   ...     print """Archive Name: %s""" % info['archiveName']
+  Archive Name: themeone.2.3.zip
+
   ...     # archive the Theme.
   ...     archivePath = os.path.join(testFolder, info['archiveName'])
   ...     os.path.exists(archivePath)
+  False
+
   ...     # zip the plugin dir
   ...     zip = archiveFolder(archivePath, testFolder, 
   ...                         info['folderName'])
   ...     os.path.exists(archivePath)
+  True
+
   ...     files = zip.namelist()
   ...     len(files)
-  ...     'themeone/style.css' in files
-  ...     'themeone/tfileone.php' in files
-  ...     'themeone/tfiletwo.php' in files
-  ...     'themeone/image/imgone.jpg' in files
-  File Name: style.css
-  Theme Name: themeone
-  Version: 2.3
-  Archive Name: themeone.2.3.zip
-  False
-  True
   5
+
+  ...     'themeone/style.css' in files
   True
+
+  ...     'themeone/tfileone.php' in files
   True
+
+  ...     'themeone/tfiletwo.php' in files
   True
+
+  ...     'themeone/image/imgone.jpg' in files
   True
 
 Questions TODOs
@@ -295,6 +319,9 @@ The ... seems not working here, might need set up one of the
 option flag::
 
   Plugin Dir: /home/.../testfolder/pluginone
+
+The **...** works only if you using **print** to show the result and
+the testing result is right after the print.
 
 Remove Testing Folder
 ---------------------
