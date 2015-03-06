@@ -212,13 +212,21 @@ We only search one level deep in the testing folder.
 
   >>> pG = "grep -l 'Plugin Name: ' " + testFolder + "/*/*.php" #**
   >>> plugins = subprocess.check_output(pG, shell=True)
+  >>> print plugins.strip()
+  /home/.../pfileone.php
   >>> tG = "grep -l 'Theme Name: ' " + testFolder + "/*/style.css"#**
   >>> themes = subprocess.check_output(tG, shell=True)
+  >>> print themes.strip()
+  /home/.../themeone/style.css
+  >>> allPkgs = plugins + themes
+  >>> print allPkgs.strip()
+  /home/.../pfileone.php
+  /home/.../style.css
 
 Archive Plugin
 ~~~~~~~~~~~~~~
 
-  >>> for plugin in plugins.splitlines():
+  >>> for plugin in plugins.strip().splitlines():
   ...     # the plugin already has full path, as we grep the 
   ...     # full path pattern.
   ...     info = extractInfo(plugin)
@@ -268,7 +276,7 @@ Archive Plugin
 Archive Theme
 ~~~~~~~~~~~~~
 
-  >>> for theme in themes.splitlines():
+  >>> for theme in themes.strip().splitlines():
   ...     info = extractInfo(theme)
   ...     print """File Name: %s""" % info['fileName']
   File Name: style.css
