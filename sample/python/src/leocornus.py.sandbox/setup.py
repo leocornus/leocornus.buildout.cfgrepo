@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.0'
+version = '1.0.1'
 name = 'leocornus.py.sandbox'
 
 def read(*rnames):
@@ -25,10 +25,10 @@ setup(
       '***********************\n'
       ),
     classifiers=[
-     'Framework :: Python',
+     'Framework :: Buildout',
      'Intended Audience :: Developers',
      'License :: OSI Approved :: GNU General Public License (GPL)',
-     'Topic :: Software Development :: Learning Sandbox',
+     'Topic :: Software Development :: Build Tools',
      'Topic :: Software Development :: Libraries :: Python Modules',
       ],
 
@@ -36,7 +36,7 @@ setup(
 
     author='Sean Chen',
     author_email='sean.chen@leocorn.com',
-    url='http://github.com/leocornus/%s' % name,
+    url='http://github.com/leocornus/leocornus.buildout.cfgrepo/tree/master/sample/python/src/%s' % name,
     license='GPLv2',
 
     packages=find_packages(exclude=['ez_setup']),
