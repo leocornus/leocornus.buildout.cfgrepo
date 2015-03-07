@@ -46,3 +46,9 @@ Some basic commands::
 
   bin/test -cvp   # execute tests with colored detail process
   bin/test -cvpD  # -D will load debugger when test failed...
+
+pypi Classifiers
+----------------
+
+The classifiers have to valid.
+Here are full list of `classifiers <https://pypi.python.org/pypi?%3Aaction=list_classifiers>`_
