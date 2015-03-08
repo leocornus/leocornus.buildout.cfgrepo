@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.1'
+version = '1.0.2'
 name = 'leocornus.py.sandbox'
 
 def read(*rnames):
@@ -25,10 +25,10 @@ setup(
       '***********************\n'
       ),
     classifiers=[
-     'Framework :: Buildout',
      'Intended Audience :: Developers',
      'License :: OSI Approved :: GNU General Public License (GPL)',
-     'Topic :: Software Development :: Build Tools',
+     'Topic :: Software Development :: Testing',
+     'Topic :: Software Development :: Documentation',
      'Topic :: Software Development :: Libraries :: Python Modules',
       ],
 
