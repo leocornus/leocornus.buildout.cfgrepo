@@ -47,6 +47,14 @@ Some basic commands::
   bin/test -cvp   # execute tests with colored detail process
   bin/test -cvpD  # -D will load debugger when test failed...
 
+Travis-ci Integration
+---------------------
+
+Some travis samples:
+
+- `hexagonit.recipe.download .travis.yml <https://github.com/hexagonit/hexagonit.recipe.download/blob/master/.travis.yml>`_ using setup.py to load test.
+- `gp.recipe.node .travis.yml <https://github.com/gawel/gp.recipe.node/blob/master/.travis.yml>`_ using buildout to load test.
+
 pypi Classifiers
 ----------------
 
