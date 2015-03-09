@@ -1,6 +1,9 @@
 `Python Development Samples <README.rst>`_ >
 How to Set Up Basic Python Development Env
 
+.. contents:: Table of Contents
+   :depth: 5
+
 buildout config
 ---------------
 
@@ -50,13 +53,23 @@ Some basic commands::
 Travis-ci Integration
 ---------------------
 
+Travis has capability to execute test cases and deploy to PyPI.
+And it is all done automatically.
+
 Some travis samples:
 
 - `hexagonit.recipe.download .travis.yml <https://github.com/hexagonit/hexagonit.recipe.download/blob/master/.travis.yml>`_ using setup.py to load test.
 - `gp.recipe.node .travis.yml <https://github.com/gawel/gp.recipe.node/blob/master/.travis.yml>`_ using buildout to load test.
+- `Travis PyPI deployment <http://docs.travis-ci.com/user/deployment/pypi/>`_
 
-pypi Classifiers
-----------------
+PyPI deployment
+---------------
+
+Buildout has built-in the PyPI deployment support.
+Here are some general commands and options::
+
+  bin/buildout setup sdist register upload
+  bin/buildout setup src/leocornus.py.sandbox sdist register upload
 
 The classifiers have to valid.
 Here are full list of `classifiers <https://pypi.python.org/pypi?%3Aaction=list_classifiers>`_
