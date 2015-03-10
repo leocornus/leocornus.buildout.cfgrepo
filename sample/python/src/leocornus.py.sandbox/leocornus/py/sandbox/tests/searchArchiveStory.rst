@@ -212,14 +212,14 @@ We only search one level deep in the testing folder.
 
   >>> pG = "grep -l 'Plugin Name: ' " + testFolder + "/*/*.php" #**
   >>> plugins = subprocess.check_output(pG, shell=True)
-  >>> print plugins.strip()
-  /home/.../pfileone.php
+  >>> """Plugin: %s""" % plugins.strip() # doctest: +ELLIPSIS
+  'Plugin:...pfileone.php'
   >>> tG = "grep -l 'Theme Name: ' " + testFolder + "/*/style.css"#**
   >>> themes = subprocess.check_output(tG, shell=True)
-  >>> print themes.strip()
+  >>> print(themes.strip()) # doctest: +ELLIPSIS
   /home/.../themeone/style.css
   >>> allPkgs = plugins + themes
-  >>> print allPkgs.strip()
+  >>> print allPkgs.strip() # doctest: +ELLIPSIS
   /home/.../pfileone.php
   /home/.../style.css
 
@@ -230,19 +230,19 @@ Archive Plugin
   ...     # the plugin already has full path, as we grep the 
   ...     # full path pattern.
   ...     info = extractInfo(plugin)
-  ...     print """File Name: %s""" % info['fileName']
+  ...     print("""File Name: %s""" % info['fileName'])
   File Name: pfileone.php
 
-  ...     print """Plugin Dir: %s""" % info['dirName'] 
+  ...     print("""Plugin Dir: %s""" % info['dirName']) 
   Plugin Dir: /.../pluginone
 
-  ...     print """Plugin Name: %s""" % info['folderName']
+  ...     print("""Plugin Name: %s""" % info['folderName'])
   Plugin Name: pluginone
 
-  ...     print """Version: %s""" % info['version']
+  ...     print("""Version: %s""" % info['version'])
   Version: 1.0.1
 
-  ...     print """Archive Name: %s""" % info['archiveName']
+  ...     print("""Archive Name: %s""" % info['archiveName'])
   Archive Name: pluginone.1.0.1.zip
 
   ...     # archive the plugin.
@@ -278,19 +278,19 @@ Archive Theme
 
   >>> for theme in themes.strip().splitlines():
   ...     info = extractInfo(theme)
-  ...     print """File Name: %s""" % info['fileName']
+  ...     print("""File Name: %s""" % info['fileName'])
   File Name: style.css
 
-  ...     print """Theme Dir: %s""" % info['dirName']
+  ...     print("""Theme Dir: %s""" % info['dirName'])
   Theme Dir: /.../themeone
 
-  ...     print """Theme Name: %s""" % info['folderName']
+  ...     print("""Theme Name: %s""" % info['folderName'])
   Theme Name: themeone
 
-  ...     print """Version: %s""" % info['version']
+  ...     print("""Version: %s""" % info['version'])
   Version: 2.3
 
-  ...     print """Archive Name: %s""" % info['archiveName']
+  ...     print("""Archive Name: %s""" % info['archiveName'])
   Archive Name: themeone.2.3.zip
 
   ...     # archive the Theme.
