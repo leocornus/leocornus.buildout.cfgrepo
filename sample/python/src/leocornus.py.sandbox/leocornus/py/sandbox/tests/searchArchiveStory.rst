@@ -331,6 +331,9 @@ option flag::
 The **...** works only if you using **print** to show the result and
 the testing result is right after the print.
 
+Adding the doctest comment for ELLIPSIS will make sure **...**
+work properly.
+
 Remove Testing Folder
 ---------------------
 
@@ -345,3 +348,17 @@ now verify testFolder is removed.
   False
   >>> os.path.isfile(testFolder)
   False
+
+Doctest Directives
+------------------
+
+Here are some interesting doctest directives, more could be found
+in post `Basic Python Doctest`_
+
++ELLIPSIS
+  This output will use Ellipsis **...**
+
++SKIP
+  Skip a test.
+
+.. _Basic Python Doctest: https://www.packtpub.com/books/content/basic-doctest-python
