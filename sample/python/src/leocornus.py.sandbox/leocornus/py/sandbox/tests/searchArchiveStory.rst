@@ -91,7 +91,15 @@ the given file full path.
 
 Parameters:
 
-Returns:
+:fullFilePath: the full path to the file.
+
+Return a dict with the following fields:
+
+:fileName: the file name, without path.
+:dirName: the full path of the directory.
+:folderName: the name of the directory without path.
+:version: Version from the file.
+:archiveName: the full path to the archive file.
 
   >>> def extractInfo(fullFilePath):
   ...     fileName = os.path.basename(fullFilePath)
