@@ -4,7 +4,7 @@ How to Set Up Basic Python Development Env
 .. contents:: Table of Contents
    :depth: 5
 
-buildout config
+Buildout Config
 ---------------
 
 The following is the basic buildout configuration, which will
@@ -62,7 +62,15 @@ Some travis samples:
 - `gp.recipe.node .travis.yml <https://github.com/gawel/gp.recipe.node/blob/master/.travis.yml>`_ using buildout to load test.
 - `Travis PyPI deployment <http://docs.travis-ci.com/user/deployment/pypi/>`_
 
-PyPI deployment
+Sphinx Documentation
+--------------------
+
+Using Sphinx_ to generate the document automatically.
+
+The collective.recipe.sphinxbuilder_ seems the easy recipe for 
+buildout to generate documentation from a package.
+
+PyPI Deployment
 ---------------
 
 Buildout has built-in the PyPI deployment support.
@@ -73,3 +81,6 @@ Here are some general commands and options::
 
 The classifiers have to valid.
 Here are full list of `classifiers <https://pypi.python.org/pypi?%3Aaction=list_classifiers>`_
+
+.. _Sphinx: http://sphinx-doc.org/
+.. _collective.recipe.sphinxbuilder: https://github.com/sdouche/collective.recipe.sphinxbuilder
