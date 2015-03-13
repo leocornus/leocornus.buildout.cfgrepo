@@ -11,6 +11,11 @@ The main parts including:
 - npm_ installation and bash script
 - bower_ installation and bash script
 
+Some Stories
+------------
+
+- `Stories about Private Registry <private-story.rst>`_
+
 How to Get Started
 ------------------
 
