@@ -14,3 +14,5 @@ Then in the **buildout.cfg** file, adding the following to
   develop =
       src/my.package
   ...
+
+My working eggs.
