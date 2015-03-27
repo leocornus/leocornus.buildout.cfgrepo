@@ -79,7 +79,21 @@ Here are some general commands and options::
   bin/buildout setup sdist register upload
   bin/buildout setup src/leocornus.py.sandbox sdist register upload
 
-The classifiers have to valid.
+Buildout will look for your **pypi** account information from file
+**~/.pypirc**. The will have the account information like following::
+
+  [distutils]
+  index-servers =
+      pypi
+  
+  [pypi]
+  username:ACCOUNT_NAME
+  password:PASSWORD
+
+Notes for setup.py
+------------------
+
+The classifiers in file setup.py have to valid.
 Here are full list of `classifiers <https://pypi.python.org/pypi?%3Aaction=list_classifiers>`_
 
 .. _Sphinx: http://sphinx-doc.org/
