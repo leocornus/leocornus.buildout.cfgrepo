@@ -49,4 +49,4 @@ We are using leocornus.pydev as the base development environment.
 Module leocornus.recipe.wpmw will be a development egg siting 
 in folder src::
 
-  $ bin/buildout setup src/leocornus.recipe.wpmw sdist register upload
+  $ bin/buildout setup src/leocornus.py.sandbox sdist register upload

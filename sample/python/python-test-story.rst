@@ -10,6 +10,23 @@ The **test_suite** is the entry point for setup.py to execute test cases.
 
 Q: how to get ready test_suite?
 
+DocFileSuite
+~~~~~~~~~~~~
+
+You could add doctest by using the DocFileSuite.
+It will take as simple as one parameter (PATH to the file).
+The **path** could be relative or absolute depends on the keyword
+argument **module_relative**. The default is **True**.
+
+Some useful doctest directives:
+
+:+ELLIPSIS:
+  tells doctest to use Ellipsis (**....**) object to verify the 
+  testing result.
+
+:+SKIP:
+  tells doctest to skip a test.
+
 Testing using buildout
 ----------------------
 
