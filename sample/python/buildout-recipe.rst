@@ -39,6 +39,10 @@ progress in colored output::
 
   bin/test -cvp
 
+You also could specify the package you want to test like following::
+
+  bin/test leocornus.py.sandbox -vvcp
+
 Generate and upload eggs
 ------------------------
 
