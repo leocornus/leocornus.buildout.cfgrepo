@@ -10,6 +10,9 @@ Trying to provide some samples for easy system administration:
 Stories
 -------
 
+Some stories about usful tools:
+
 - `Sed Story <sed-story.rst>`_
 - `Vim Story <vim-story.rst>`_
 - `Cygwin Story <cygwin-story.rst>`_
+- `Script Story <script-story.rst>`_
