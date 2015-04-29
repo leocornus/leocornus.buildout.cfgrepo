@@ -16,3 +16,4 @@ Some stories about usful tools:
 - `Vim Story <vim-story.rst>`_
 - `Cygwin Story <cygwin-story.rst>`_
 - `Script Story <script-story.rst>`_
+- `Aha Story <aha-story.rst>`_
