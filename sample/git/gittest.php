@@ -1,5 +1,5 @@
 <?php
-$repo = git_repository_open("/usr/opspedia/xampp");
+$repo = git_repository_open("/usr/sean/xampp");
 var_dump($repo);
 $reflog = git_reflog_read($repo, "HEAD");
 
