@@ -49,6 +49,8 @@ Some basic commands::
 
   bin/test -cvp   # execute tests with colored detail process
   bin/test -cvpD  # -D will load debugger when test failed...
+  bin/test -vcp -t leocornus.py.sandbox.tests.core.*
+                  # only execute the test cases match the pattern.
 
 Travis-ci Integration
 ---------------------
