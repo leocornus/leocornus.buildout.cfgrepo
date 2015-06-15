@@ -22,8 +22,14 @@ Setup Steps
    <buildout-taiga.cfg>`_
 #. update users, ports, hosts 
 #. install part **init-postgresql** to create database.
+#. install part **create-taiga-db** to create database with owner taiga
+#. import basic data by running migrate, loaddata, compilemessages,
+   and collectstatic. Reference 
 
 Command Memo
 ------------
 
+Questions
+---------
 
+- How to change the IP for backend?
