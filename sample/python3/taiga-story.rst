@@ -15,20 +15,46 @@ Taiga depends on the following softwares:
 - Circus or Supervisord, circus is better as Supervisord 
   is not working on Python 3 until version 4.0
 
-Setup Steps
------------
+Setup Steps for backend
+-----------------------
 
 #. clone **taiga-back** to src folder.
 #. create buildout config file by extending `buildout-taiga.cfg
    <buildout-taiga.cfg>`_
 #. update users, ports, hosts 
 #. install part **init-postgresql** to create database.
-#. install part **create-taiga-db** to create database with owner taiga
+#. install part **create-taiga-db** to create database with 
+   owner taiga
 #. import basic data by running migrate, loaddata, compilemessages,
    and collectstatic. Reference 
 
-Command Memo
-------------
+Taiga Agile Concept
+-------------------
+
+Taiga has the following basic concepts:
+
+- Project is built up with stories and issues
+- Backlog will be a parking lot for all pending stories.
+- Ability to turn an issue to a story
+- Sprint is used to group stories into a 2-week period.
+- Tasks are used to break down a story to small pieces of work
+- Team member could be assigned to task or story
+- Allow tasks without a story (Unassigned Tasks)
+- Sprint Taskboard is very intuitive: very nice view and 
+  drag and drop tasks between stories and across status.
+- Ability to customize status, priorities, severities
+- Ability to create custom fields for story, task and issue
+- Ability to customize team member roles for a Project. Default roles   include Design, Front, Back, UX, Stakeholder, External user, Design,
+  Production Owner.
+- Comprehensive REST APIs
+- Ability to integrate with Github, Gitlab, Bitbucket
+
+We need the following thing to get understand how Taiga Agile works?
+
+- Story lifecycle
+- Task lifecycle
+- Sprint lifecycle
+- Project lifecycle
 
 Questions
 ---------
