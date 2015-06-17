@@ -18,6 +18,7 @@ Taiga depends on the following softwares:
 Setup Steps
 -----------
 
+#. clone **taiga-back** to src folder.
 #. create buildout config file by extending `buildout-taiga.cfg
    <buildout-taiga.cfg>`_
 #. update users, ports, hosts 
@@ -32,4 +33,10 @@ Command Memo
 Questions
 ---------
 
-- How to change the IP for backend?
+**How to change the binding IP for taiga backend?**
+
+using the Django command line options, for example::
+
+  $ ../bin/taiga-back runserver 10.160.192.20:8000
+
+
