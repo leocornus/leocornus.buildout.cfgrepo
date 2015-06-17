@@ -33,6 +33,14 @@ Taiga Agile Concept
 
 Taiga has the following basic concepts:
 
+- blocks: sprint, user story, task, issue
+- members
+- roles: UX, Front, Back, Design, Stakholder, Tester, etc
+- views: project backlog, sprint taskboard
+- Points:
+
+Operation highlight
+
 - Project is built up with stories and issues
 - Backlog will be a parking lot for all pending stories.
 - Ability to turn an issue to a story
@@ -40,12 +48,27 @@ Taiga has the following basic concepts:
 - Tasks are used to break down a story to small pieces of work
 - Team member could be assigned to task or story
 - Allow tasks without a story (Unassigned Tasks)
-- Sprint Taskboard is very intuitive: very nice view and 
-  drag and drop tasks between stories and across status.
 - Ability to customize status, priorities, severities
 - Ability to create custom fields for story, task and issue
 - Ability to customize team member roles for a Project. Default roles   include Design, Front, Back, UX, Stakeholder, External user, Design,
   Production Owner.
+- Ability to assign points for different roles on a story.
+- Points for a story is the total number of points from different
+  roles.
+- Ability to add member to a project.
+- Ability to manage permissions for different roles on different
+  blocks: Sprint, User story, task, issue
+
+UX highlight
+
+- Sprint Taskboard is very intuitive: very nice view and 
+  drag and drop tasks between stories and across status.
+- Backlog view has full list of parking stories and a list of 
+  running sprint.
+- Backlog view has the ability to drag and drop stories to sprints
+
+Development fiendly features
+
 - Comprehensive REST APIs
 - Ability to integrate with Github, Gitlab, Bitbucket
 
