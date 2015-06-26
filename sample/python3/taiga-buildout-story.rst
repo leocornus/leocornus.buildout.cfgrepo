@@ -48,3 +48,17 @@ As cut, we will only have the following on board:
 - setup PostgreSQL database for taiga-back: create database and 
   user
 - create easier Django manage scripts.
+
+PostgreSQL admin
+----------------
+
+:Start PostgreSQL Server:
+    $ parts/postgresql-build/bin/pg_ctl start -D var/postgresql/taiga
+:Stop PostgreSQL Server:
+    $ parts/postgresql-build/bin/pg_ctl stop -D var/postgresql/taiga
+:SQL client:
+    $ parts/postgresql-build/bin/psql taiga
+
+**TODO**
+
+- generate script for all those
