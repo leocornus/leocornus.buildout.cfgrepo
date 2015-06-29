@@ -1,3 +1,4 @@
+`Sysadmin Samples <README.rst>`_
 AHA Story
 =========
 

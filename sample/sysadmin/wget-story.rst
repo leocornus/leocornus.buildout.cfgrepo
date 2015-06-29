@@ -1,4 +1,4 @@
-`Sysadmin Samples <../README.rst>`_
+`Sysadmin Samples <README.rst>`_
 > Tips for wget
 
 wget resource file
