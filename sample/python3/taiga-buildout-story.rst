@@ -59,6 +59,32 @@ PostgreSQL admin
 :SQL client:
     $ parts/postgresql-build/bin/psql taiga
 
+Steps
+-----
+
+Steps to get started.
+get ready the buildout.cfg
+
+:python3.4 bootstrap.py:
+    bootstrap buildout.
+:bin/buildout:
+    execute buildout to compile and install PostgreSQL database
+    server and the Django manage script **bin/taiga-back**
+:bin/buildout -N install init-postgresql:
+    this will initialize postgreSQL database for taiga-back.
+:bin/buildout -N:
+    this will update the config file for PostgreSQL
+:bin/buildout -N install generat-scripts:
+    generate scripts for PostgreSQL admin.
+:bin/start-postmaster:
+    Start the PostgreSQL database server
+:bin/buildout -N install create-taiga-db:
+    create taiga database and database user.
+:bin/buildout -N install pop-demo-data:
+    populate demo data.
+:bin/taiga-back runserver 10.1.1.1:9000:
+    start taiga-back service.
+
 **TODO**
 
 - generate script for all those
