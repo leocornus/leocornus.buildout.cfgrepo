@@ -82,8 +82,9 @@ get ready the buildout.cfg
     create taiga database and database user.
 :bin/buildout -N install pop-demo-data:
     populate demo data.
-:bin/taiga-back runserver 10.1.1.1:9000:
-    start taiga-back service.
+:bin/taiga-back runserver:
+    start taiga-back service, to specify ip and port:
+    **bin/taiga-back runserver 10.1.1.1:9000**.
 
 **TODO**
 
