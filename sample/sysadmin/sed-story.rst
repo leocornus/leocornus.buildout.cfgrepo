@@ -1,4 +1,5 @@
-Sed Story
+`Sysadmin Samples <../README.rst>`_
+> Sed Story
 
 Search Relpace
 --------------

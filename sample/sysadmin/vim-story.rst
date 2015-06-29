@@ -1,4 +1,5 @@
-Some tips for Vim.
+`Sysadmin Samples <../README.rst>`_
+> Some tips for Vim.
 
 color schemes
 -------------

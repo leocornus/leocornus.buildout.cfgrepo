@@ -1,5 +1,6 @@
 `Sysadmin Samples <../README.rst>`_
-Script to capture terminal session.
+
+Script to capture terminal session
 
 It is very easy to capture a terminal session by using script_.
 Here is example::
