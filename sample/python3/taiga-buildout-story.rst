@@ -16,58 +16,66 @@ Benifit
   packages for a large project. 
   taiga-back depends on a lot packages.
 
-proposal
+Proposal
 --------
+
+As the initiative, we will get started with:
 
 - create **taiga-contrib-buildout** git repo.
 - phase by phase roll out features.
 
-Basic features
---------------
+Basic features for First Cut
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As first cut, we will only have the following on board:
 
 - install dependence eggs
 - generate taiga-back script as Django manage script
 - install and setup PostgreSQL database.
-- load testing data.
-- generate various scripts: test, 
+- create database and user for taiga-back, load sample data.
+- generate various scripts: test, PostgreSQL admin, etc.
 
 Frontend development
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Possibly automate the frontend development too.
 
 - FRONTEND: install and config Nginx
 - FRONTEND: install and config Node.js and npm
-- automate test 
+- automate frontend test 
 
-First Cut
----------
-
-As to now, supervisor doesn't support Python 3.
-So we have to use circus to manage processes.
-
-As cut, we will only have the following on board:
-
-- install PostgreSQL database
-- setup PostgreSQL database for taiga-back: create database and 
-  user
-- create easier Django manage scripts.
-
-PostgreSQL admin
-----------------
-
-:Start PostgreSQL Server:
-    $ parts/postgresql-build/bin/pg_ctl start -D var/postgresql/taiga
-:Stop PostgreSQL Server:
-    $ parts/postgresql-build/bin/pg_ctl stop -D var/postgresql/taiga
-:SQL client:
-    $ parts/postgresql-build/bin/psql taiga
-
-Steps
------
+Steps to Get Started
+--------------------
 
 Steps to get started.
-get ready the buildout.cfg
+
+- create buildout folder::
+
+    $ mkdir taigaio
+    $ cd taigaio
+
+- clone cfgrepo_ repo to cfgrepo folder::
+
+    $ git clone https://github.com/leocornus/leocornus.buildout.cfgrepo.git cfgrepo
+
+- clone taiga_back_ repo to taiga_back folder::
+
+    $ git clone https://github.com/taigaio/taiga-back.git
+
+- clone django_pglocks_ repos to src folder::
+
+    $ mkdir src
+    $ cd src
+    $ git clone  https://github.com/Xof/django-pglocks.git
+
+- Get ready the bootstrap.py, buildout-taiga.cfg, and buildout.cfg::
+
+    $ cp cfgrepo/sample/python3/bootstrap.py .
+    $ cp cfgrepo/sample/python3/buildout-taiga.cfg .
+    $ cp cfgrepo/sample/python3/buildout.cfg .
+
+- Optional: update buildout.cfg for PostgreSQL server's listen port.
+- execute the following commands.
 
 :python3.4 bootstrap.py:
     bootstrap buildout.
@@ -94,7 +102,21 @@ TODO
 ----
 
 - introduce circus to manage all process for development, including
-  PostgreSQL, Nginx, gunicore, etc.
+  PostgreSQL, Nginx, gunicorn, etc.
 - introduce mr.developer_ to manage packages.
+
+PostgreSQL admin
+----------------
+
+a quick memo for PostgreSQL admin
+
+:Start PostgreSQL Server:
+    $ bin/pg_ctl start -D var/postgresql/taiga
+:Stop PostgreSQL Server:
+    $ bin/pg_ctl stop -D var/postgresql/taiga
+:Check PostgreSQL Server:
+    $ bin/pg_ctl status -D var/postgresql/taiga
+:SQL client:
+    $ bin/psql taiga
 
 .. _mr.developer: https://pypi.python.org/pypi/mr.developer
