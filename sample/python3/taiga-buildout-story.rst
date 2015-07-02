@@ -1,20 +1,25 @@
 Buildout Story for taiga-back
-==========================================================
+=============================
 
-taiga-back is maily a Django application.
+taiga-back is mainly a Django application.
 Buildout is a very efficient tool to manage a Django application.
+
+.. contents:: Table of Contents
+    :depth: 5
 
 Benifit
 -------
 
-- automated development process the most.
-- buildout is born for Python app,
-- 
+- Buildout is born for Python app and is good at manage Django apps.
+- Buildout will help automate development process the most.
+- buildout extension mr.developer_ is the best tool to manage pypi
+  packages for a large project. 
+  taiga-back depends on a lot packages.
 
 proposal
 --------
 
-- create **buildout** folder.
+- create **taiga-contrib-buildout** git repo.
 - phase by phase roll out features.
 
 Basic features
@@ -25,16 +30,15 @@ Basic features
 - install and setup PostgreSQL database.
 - load testing data.
 - generate various scripts: test, 
-- install and config circus
 
 Frontend development
 --------------------
 
-Possibly automate the frontend development.
+Possibly automate the frontend development too.
 
 - FRONTEND: install and config Nginx
 - FRONTEND: install and config Node.js and npm
-- 
+- automate test 
 
 First Cut
 ---------
@@ -86,6 +90,11 @@ get ready the buildout.cfg
     start taiga-back service, to specify ip and port:
     **bin/taiga-back runserver 10.1.1.1:9000**.
 
-**TODO**
+TODO
+----
 
-- generate script for all those
+- introduce circus to manage all process for development, including
+  PostgreSQL, Nginx, gunicore, etc.
+- introduce mr.developer_ to manage packages.
+
+.. _mr.developer: https://pypi.python.org/pypi/mr.developer
