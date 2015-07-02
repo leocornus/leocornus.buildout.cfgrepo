@@ -71,6 +71,7 @@ Steps to get started.
 
 - Get ready the bootstrap.py, buildout-taiga.cfg, and buildout.cfg::
 
+    $ cd ..    # get back to buildout folder.
     $ cp cfgrepo/sample/python3/bootstrap.py .
     $ cp cfgrepo/sample/python3/buildout-taiga.cfg .
     $ cp cfgrepo/sample/python3/buildout.cfg .
@@ -104,11 +105,11 @@ Steps to get started.
     this will initialize postgreSQL database for taiga-back.
 :bin/buildout -N:
     this will update the config file for PostgreSQL
-:bin/pg_ctl start -D var/postgresql/taiga
+:bin/pg_ctl start -D var/postgresql/taiga:
     Start the PostgreSQL database server
 :bin/buildout -N install create-taiga-db:
     create taiga database and database user.
-:bin/buildout -N install pop-demo-data:
+:bin/buildout -N install populate-sample-data:
     populate demo data.
 :bin/taiga-back runserver:
     start taiga-back service, to specify ip and port:
