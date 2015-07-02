@@ -58,11 +58,12 @@ Steps to get started.
 
     $ git clone https://github.com/leocornus/leocornus.buildout.cfgrepo.git cfgrepo
 
-- clone taiga_back_ repo to taiga_back folder::
+- clone taiga-back_ repo to taiga_back folder::
 
     $ git clone https://github.com/taigaio/taiga-back.git
 
-- clone django_pglocks_ repos to src folder::
+- clone django-pglocks_ repos to src folder, as taiga-back needs
+  the master branch::
 
     $ mkdir src
     $ cd src
@@ -74,7 +75,22 @@ Steps to get started.
     $ cp cfgrepo/sample/python3/buildout-taiga.cfg .
     $ cp cfgrepo/sample/python3/buildout.cfg .
 
-- Optional: update buildout.cfg for PostgreSQL server's listen port.
+- Optional: update buildout.cfg for PostgreSQL server's listen IP 
+  and port. The whole buildout.cfg looks like this::
+
+    [buildout]
+    extends =
+        buildout-taiga.cfg
+
+    [users]
+    postgresql = ubunbu
+
+    [ports]
+    postgresql = 5432
+
+    [hosts]
+    postgresql-ip = 127.0.0.1
+
 - execute the following commands.
 
 :python3.4 bootstrap.py:
@@ -82,13 +98,13 @@ Steps to get started.
 :bin/buildout:
     execute buildout to compile and install PostgreSQL database
     server and the Django manage script **bin/taiga-back**
+:rm var/postgresql/taiga/postgresql.conf:
+    Empty the PostgreSQL data directory.
 :bin/buildout -N install init-postgresql:
     this will initialize postgreSQL database for taiga-back.
 :bin/buildout -N:
     this will update the config file for PostgreSQL
-:bin/buildout -N install generat-scripts:
-    generate scripts for PostgreSQL admin.
-:bin/start-postmaster:
+:bin/pg_ctl start -D var/postgresql/taiga
     Start the PostgreSQL database server
 :bin/buildout -N install create-taiga-db:
     create taiga database and database user.
@@ -120,3 +136,6 @@ a quick memo for PostgreSQL admin
     $ bin/psql taiga
 
 .. _mr.developer: https://pypi.python.org/pypi/mr.developer
+.. _cfgrepo: https://github.com/leocornus/leocornus.buildout.cfgrepo
+.. _taiga-back: https://github.com/seanchen/taiga-back
+.. _diango-pglocks: https://github.com/Xof/django-pglocks
