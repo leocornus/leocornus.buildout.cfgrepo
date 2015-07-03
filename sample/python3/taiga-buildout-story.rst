@@ -69,7 +69,7 @@ Steps to get started.
     $ cd src
     $ git clone  https://github.com/Xof/django-pglocks.git
 
-#. Get ready the bootstrap.py, buildout-taiga.cfg, and buildout.cfg::
+#. Get ready the bootstrap.py, buildout-taiga.cfg_, and buildout.cfg_::
 
     $ cd ..    # get back to buildout folder.
     $ cp cfgrepo/sample/python3/bootstrap.py .
@@ -152,3 +152,5 @@ a quick memo for PostgreSQL admin
 .. _cfgrepo: https://github.com/leocornus/leocornus.buildout.cfgrepo
 .. _taiga-back: https://github.com/seanchen/taiga-back
 .. _django-pglocks: https://github.com/Xof/django-pglocks
+.. _buildout-taiga.cfg: buildout-taiga.cfg
+.. _buildout.cfg: buildout.cfg
