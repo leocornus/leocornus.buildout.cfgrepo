@@ -49,35 +49,35 @@ Steps to Get Started
 
 Steps to get started.
 
-- create buildout folder::
+#. create buildout folder::
 
     $ mkdir taigaio
     $ cd taigaio
 
-- clone cfgrepo_ repo to cfgrepo folder::
+#. clone cfgrepo_ repo to cfgrepo folder::
 
     $ git clone https://github.com/leocornus/leocornus.buildout.cfgrepo.git cfgrepo
 
-- clone taiga-back_ repo to taiga_back folder::
+#. clone taiga-back_ repo to taiga_back folder::
 
     $ git clone https://github.com/taigaio/taiga-back.git
 
-- clone django-pglocks_ repos to src folder, as taiga-back needs
-  the master branch::
+#. clone django-pglocks_ repos to src folder, as taiga-back needs
+   the master branch::
 
     $ mkdir src
     $ cd src
     $ git clone  https://github.com/Xof/django-pglocks.git
 
-- Get ready the bootstrap.py, buildout-taiga.cfg, and buildout.cfg::
+#. Get ready the bootstrap.py, buildout-taiga.cfg, and buildout.cfg::
 
     $ cd ..    # get back to buildout folder.
     $ cp cfgrepo/sample/python3/bootstrap.py .
     $ cp cfgrepo/sample/python3/buildout-taiga.cfg .
     $ cp cfgrepo/sample/python3/buildout.cfg .
 
-- Optional: update buildout.cfg for PostgreSQL server's listen IP 
-  and port. The whole buildout.cfg looks like this::
+#. Optional: update buildout.cfg for PostgreSQL server's listen IP 
+   and port. The whole buildout.cfg looks like this::
 
     [buildout]
     extends =
@@ -92,7 +92,7 @@ Steps to get started.
     [hosts]
     postgresql-ip = 127.0.0.1
 
-- execute the following commands.
+#. execute the following commands.
 
 :python3.4 bootstrap.py:
     bootstrap buildout.
@@ -114,6 +114,18 @@ Steps to get started.
 :bin/taiga-back runserver:
     start taiga-back service, to specify ip and port:
     **bin/taiga-back runserver 10.1.1.1:9000**.
+
+What's been built
+~~~~~~~~~~~~~~~~~
+
+Here is a list of things built by buildout.
+
+:parts/postgresql-build:
+    the PostgreSQL database server
+:var/postgresql/taiga:
+    PostgreSQL database data directory for taiga-back
+:bin/taiga-back:
+    The Django manage script for taiga-back
 
 TODO
 ----
@@ -139,4 +151,4 @@ a quick memo for PostgreSQL admin
 .. _mr.developer: https://pypi.python.org/pypi/mr.developer
 .. _cfgrepo: https://github.com/leocornus/leocornus.buildout.cfgrepo
 .. _taiga-back: https://github.com/seanchen/taiga-back
-.. _diango-pglocks: https://github.com/Xof/django-pglocks
+.. _django-pglocks: https://github.com/Xof/django-pglocks
