@@ -1,6 +1,34 @@
 `Git Stories <README.rst>`_ >
 Git Tips
 
+Git Switch Remote
+-----------------
+
+switch remote is as simple as::
+
+  git remote set-url origin /local/path/to/git/repo.git
+  git remote -v
+
+Migration Actions
+-----------------
+
+- git clone --bare REMOTE_URL
+
+.. _Git on the Server: http://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols
+
+Git Achive
+----------
+
+It is very easy to generate archive files (zip or tar) from 
+git repository.
+The following example will generate the archive file
+**mytheme-8bb9d5a.zip** on **themes** folder at commit **8bb9d5a**
+for **mytheme**.
+::
+
+  $ cd themes
+  $ git archive --format=zip -o mytheme-8bb9d5a.zip 8bb9d5a mytheme
+
 How to set proxy
 ----------------
 
