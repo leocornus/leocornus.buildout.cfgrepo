@@ -16,6 +16,15 @@ Migration Actions
 
 .. _Git on the Server: http://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols
 
+rev-list for total number
+-------------------------
+
+you my ask more than one path from git:: 
+
+  $ cd themes
+  $ git rev-list HEAD --count themeone themetwo
+  $ git rev-list HEAD --count /full/path/to/themeone /full/path/two
+
 Git Achive
 ----------
 
