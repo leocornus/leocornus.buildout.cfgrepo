@@ -85,4 +85,21 @@ Then execute the following from command line::
 Now we have the new repository with all history from folder
 **sample/python/src/leocornus.py.sandbox** 
 
+How to move files (folders) from repo A to repo B
+-------------------------------------------------
+
+This should prrserve all commit history for the files.
+The post `Moving files between git repos`_ has details steps.
+
+Here is the idea:
+
+- clone everyting to local.
+- pull everything 
+
+question:
+
+- how to keep the folder name.
+
+
+.. _Moving files between git repos: http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/
 .. _splitting a subfolder out into a new repository: https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/
