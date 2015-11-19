@@ -18,3 +18,4 @@ Some stories about usful tools:
 - `Script Story <script-story.rst>`_
 - `Aha Story <aha-story.rst>`_
 - `wget Story <wget-story.rst>`_
+- `byobu story <byobu-story.rst>`_
