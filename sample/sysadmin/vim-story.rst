@@ -26,9 +26,26 @@ search and replace is under command **substitute**
   :%s/foo/bar/g
   :help substitue
 
+record and play
+---------------
+
+record something to register a.
+valid registers are **[0-9a-zA-Z]**
+::
+
+  :qa
+  :help record
+
+execute the contents of a register.
+::
+
+  :@a
+  :@@
+
 .vimrc
 ------
 
 An sample for file **.vimrc**::
 
   colorscheme desert      " colorscheme desert
+  colors desert
