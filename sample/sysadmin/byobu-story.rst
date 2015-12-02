@@ -20,3 +20,9 @@ Here is how to config the behavior::
     - You can run 'byobu-ctrl-a' at any time to change your selection
   
   Select [1 or 2]:
+
+Screen inside another screen
+----------------------------
+
+The **CTRL-a a** will be the **CTRL-a** for the sub screen.
+For example **CTRL-a a d** will detach the sub screen.
