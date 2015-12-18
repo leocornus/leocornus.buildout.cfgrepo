@@ -59,7 +59,7 @@ Create htpasswd
 
 using apache htpasswd to create user name and password::
 
-  $ htpass -bc test.pass seanchen mygitpassword
+  $ htpasswd -bc git.htpasswd seanchen mygitpassword
 
 Nginx Config
 ''''''''''''
@@ -82,7 +82,7 @@ Here is the config file for Nginx server::
           client_max_body_size 0;
   
           auth_basic "git anonymous read-only, authenticated write";  
-          auth_basic_user_file /usr/git/http/conf/htpasswd; # OR path/to/htpasswd  
+          auth_basic_user_file /usr/git/http/conf/git.htpasswd; # OR path/to/htpasswd  
   
           fastcgi_split_path_info ^(.*/git)(/.*)$;
   
@@ -102,7 +102,8 @@ Here is the config file for Nginx server::
 clone over http
 ---------------
 
-Now we can clone the repo over HTTP::
+Now we can clone the repo over HTTP and the 
+initial commit.::
 
   $ git clone http://my.git.repo.com:8022/git/first.git
   $ cd first
@@ -111,3 +112,12 @@ Now we can clone the repo over HTTP::
   $ git commit . -m 'first commit'
   $ git push origin master
 
+Use PHP to generate the htpasswd file
+-------------------------------------
+
+Apache has the tool **htpasswd** to generate passowrd.
+By default htpasswd is using CRYPT encryption for password.
+PHP has a crypt function to encrypt password.
+
+Apahce `Password Formats <http://httpd.apache.org/docs/2.2/misc/password_encryptions.html>`_
+has good documentation.
