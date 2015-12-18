@@ -121,3 +121,12 @@ PHP has a crypt function to encrypt password.
 
 Apahce `Password Formats <http://httpd.apache.org/docs/2.2/misc/password_encryptions.html>`_
 has good documentation.
+Here is some samples::
+
+  <?php
+  // Password to be used for the user
+  $username = 'user1';
+  $password = 'password1';
+   
+  // Encrypt password
+  $encrypted_password = crypt($password, base64_encode($password));
