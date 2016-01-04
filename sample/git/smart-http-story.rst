@@ -37,7 +37,8 @@ the simple choice will be **fcgiwrap**.
 Create Git Repo
 '''''''''''''''
 
-Following these commands to create a git bare repository on git server::
+Following these commands to create a git bare repository 
+on git server::
 
   $ git init --bare /usr/rd/git-repos/first.git
   $ cd /usr/rd/git-repos/first.git
@@ -111,6 +112,18 @@ initial commit.::
   $ git add README.rst
   $ git commit . -m 'first commit'
   $ git push origin master
+
+save password over http
+-----------------------
+
+We could save the git password localy to make life easier.
+The **credential.helper** config option will be set to store::
+
+  $ git config credential.helper store
+
+There will be a file in user's home folder to store the username
+and password.
+The file name will be **~\.git-credentials**.
 
 Use PHP to generate the htpasswd file
 -------------------------------------
