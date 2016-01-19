@@ -21,7 +21,7 @@ It will have the following functions:
 - demostration how the using the php-fpm in Nginx
 - show the php info
 - test the php-fpm is working fine.
-- show stastics  info for php-fpm
+- show stastics info for php-fpm
 
 How to use it?
 --------------

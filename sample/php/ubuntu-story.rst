@@ -32,9 +32,13 @@ PHP dependences or extensions:
 - freetype-devel, libfreetype-dev (Ubuntu)
 - gettext
 
+Nginx dependences:
+
+- libpcre3-dev
+
 command line sample::
 
   $ sudo aptitude install libbz2-dev libxml2-dev gettext
   $ sudo aptitude install libjpeg-dev libpng-dev libgd2-dev 
   $ sudo aptitude install libmcrypt-dev libfreetype6-dev
-  $ sudo aptitude install libcurl4-openssl-dev
+  $ sudo aptitude install libcurl4-openssl-dev libpcre3-dev
