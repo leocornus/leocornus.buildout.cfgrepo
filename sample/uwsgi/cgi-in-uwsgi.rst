@@ -20,10 +20,36 @@ this quick start will build the following things:
 buildout config
 ---------------
 
+Here is the build out file::
+
+  ####################
+  # buildout config file to set
+  #  - running user
+  #  - ips, ports
+  #
+  [buildout]
+  extends = 
+      buildout-quickstart-cgi.cfg
+  
+  [users]
+  nginx = nginx
+  uwsgi = nginx
+  
+  [ports]
+  supervisord = 8909
+  nginx = 8980
+  uwsgi = 8900
+  uwsgi-stats = 8901
+  
+  [hosts]
+  uwsgi = 10.1.1.111
+  frontend-ip = 10.1.1.111
+  frontend-hostname = 10.1.1.111
+
 uwsgi config
 ------------
 
-uwsgi configuration is very simple::
+Minium uwsgi configuration is very simple::
 
   # php-cgi.ini
   [uwsgi]
@@ -33,18 +59,25 @@ uwsgi configuration is very simple::
   cgi-allowed-ext = .php
   cgi-helper = .php=php-cgi
   
-  chdir = %d
-  
-  post-buffering               = 8192
-  
-  # start up to 4 but try to stay at 1
-  processes                    = 4
-  cheaper                      = 1
-  
-  # lots more customizations possible
-
 Nginx config
 ------------
 
+configuration for Nginx web server.::
+
+  location ~ \.php$ {
+      root ${:document-root};
+      include ${nginx-build:location}/conf/uwsgi_params;
+      # uwsgi cgi using modifier1 as 9
+      uwsgi_modifier1 9;
+      uwsgi_pass ${hosts:uwsgi}:${ports:uwsgi};
+  }
+
 Supervisor config
 -----------------
+
+Supervisor program for uwsgi-cgi is as simple as following::
+
+  [program:uwsgi-cgi]
+  command = /path/to/bin/uwsgi --ini /path/to/uwsgi-cgi.ini
+  process_name = uwsgi-cgi
+  user = uwsgi
