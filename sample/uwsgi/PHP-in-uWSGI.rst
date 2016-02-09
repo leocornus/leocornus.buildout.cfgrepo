@@ -81,6 +81,21 @@ Here is he config to run uwsgi-php from comamnd line::
   [program:uwsgi-php]
   command = /path/to/bin/uwsgi --plugin php --socket 10.1.1.2:8900 --master --processes 4 --cheaper 2
 
+Here is a ini config file for uwsgi php plugin::
+
+  # uwsgi-php.ini
+  [uwsgi]
+  socket = 10.1.1.2:8900
+  plugin = php
+  # using master process.
+  master = true
+  # max 4 threads / processes
+  processes = 4
+  # keep 2 processes live
+  cheaper = 2
+  # turn on the stats.
+  stats = 10.1.1.2:8901
+
 Challenges
 ----------
 
