@@ -1,5 +1,5 @@
-Running CGI in uWSGI
-====================
+`Back to README <README.rst>`_ >
+Running CGI on uWSGI
 
 Quick start to build, config, and run CGI in uWSGI
 Mainly reference to `Running CGI scripts on uWSGI <http://uwsgi-docs.readthedocs.org/en/latest/CGI.html>`_.
@@ -21,7 +21,10 @@ this quick start will build the following things:
 buildout config
 ---------------
 
-Here is the build out file::
+It is very easy to create a **buildout.cfg** file by simply extends
+the `buildout-quickstart-cgi.cfg <buildout-quickstart-cgi.cfg>`_.
+
+Here is the buildout file::
 
   ####################
   # buildout config file to set
