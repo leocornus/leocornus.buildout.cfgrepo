@@ -1,7 +1,8 @@
-Running CGI in uWsgi
+Running CGI in uWSGI
 ====================
 
-Quick start to build, config, and run CGI in uWsgi.
+Quick start to build, config, and run CGI in uWSGI
+Mainly reference to `Running CGI scripts on uWSGI <http://uwsgi-docs.readthedocs.org/en/latest/CGI.html>`_.
 
 What we build
 -------------
