@@ -39,6 +39,17 @@ visit http://localhost
 Buildout config
 ---------------
 
+file and folder structure::
+
+  buildout-db.cfg
+  buildout-php.cfg
+  buildout-nodejs.cfg
+  buildout-nginx.cfg
+  buildout-java.cfg
+  buildout-python.cfg
+  buildout-local.cfg
+  buildout.cfg
+
 Dependences
 -----------
 
