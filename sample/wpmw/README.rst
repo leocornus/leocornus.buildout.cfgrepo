@@ -39,7 +39,7 @@ visit http://localhost
 Buildout config
 ---------------
 
-file and folder structure::
+buildout config for software infrastructure::
 
   buildout-db.cfg
   buildout-php.cfg
@@ -49,6 +49,10 @@ file and folder structure::
   buildout-python.cfg
   buildout-local.cfg
   buildout.cfg
+
+buildout config for applications::
+
+  buildout-php-apps.cfg
 
 Dependences
 -----------
