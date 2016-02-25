@@ -22,4 +22,13 @@ Steps to set up SSL/TLS certificates:
   able to type your domain name here.
 - validate domain ownership. a validation email will be send to the
   domain name owner's email.
-- 
+
+**AWS CLI**
+
+We need use **AWS CLI** to request a SSL certificate for a subdomain.
+Such as **test.example.com**.
+
+- install the AWS CLI client, Python egg.
+- create the buildout config file to generate the script.
+
+**AWS CLI setup**
