@@ -31,4 +31,10 @@ Such as **test.example.com**.
 - install the AWS CLI client, Python egg.
 - create the buildout config file to generate the script.
 
-**AWS CLI setup**
+AWS CLI Basic
+-------------
+
+mainly we only need know the following commands:
+
+- aws help
+- aws configure
