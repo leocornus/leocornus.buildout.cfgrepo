@@ -15,3 +15,11 @@ the following command will do the same work plus add the sum of
 lines for all the files found.::
 
   $ find . -name "*.c" -print | xargs wc -l
+
+Using grep
+----------
+
+counting forms for an application::
+
+  $ grep -nr --include=*.{php,html,js} '<form' . | wc
+
