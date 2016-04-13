@@ -1,8 +1,11 @@
+`Build and Config Zabbix Service <How-to-Build-Config-Zabbix.rst>`_
+> Zabbix Agent Story
+
 Zabbix Agent Quick Start
 ------------------------
 
 - `Compile and Build`_ Zabbix Agent
-- Agent Configuration
+- `Zabbix Agent Configuration File`_
 - Run Agent
 
 Compile and Build
