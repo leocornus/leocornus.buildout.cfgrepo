@@ -85,6 +85,14 @@ Then execute the following from command line::
 Now we have the new repository with all history from folder
 **sample/python/src/leocornus.py.sandbox** 
 
+How to apply patch to files
+---------------------------
+
+here are some memo to generate patch file and apply the patch.::
+
+  $ git diff --patch . >> thePatch.diff
+  $ git apply thePatch.diff
+
 How to move files (folders) from repo A to repo B
 -------------------------------------------------
 
