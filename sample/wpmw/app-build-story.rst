@@ -12,6 +12,9 @@ Here are list applications:
 
 TODO:
 
+Composer for PHP packages, including themes, plugins, extensions,
+and skins.
+
 - How to manage a list of plugins?
 - How to manage a list of extensions?
 - how to manage themes?
@@ -42,3 +45,17 @@ there are some choices for making default options for a theme:
 - if !dynamic_sidebar() add manual widgets, dynamic_sidebar
   return true or false
 - function the_widget could be used to load default widgets.
+
+Steps for initial setup
+-----------------------
+
+- download source code for WordPress and MediaWiki
+- setup database (database user, databases)
+
+- Nginx configruation, WordPress rewrite rules
+- WordPress configuration, wp-config.php
+- Execute WordPress installation script.
+- Set network for WordPress, update configruation.
+
+- Nginx configuarion for MediaWiki
+- 
