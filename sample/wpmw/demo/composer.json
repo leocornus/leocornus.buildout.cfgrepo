@@ -1,0 +1,46 @@
+{
+  "name": "leocornus/vault",
+  "description": "Vault for leocornus",
+  "type": "project",
+  "license": "GPL2",
+  "authors": [
+    {
+      "name": "Sean Chen",
+      "email": "sean.chen@leocorn.com"
+    }
+  ],
+
+  "repositories" : [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress",
+        "type": "webroot",
+        "version": "4.5",
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/WordPress/WordPress/archive/4.5.zip"
+        }
+      }
+    }
+  ],
+
+  "require": {
+    "wordpress": "4.5",
+    "wpackagist-plugin/pods": "2.6",
+    "wpackagist-theme/waves": "1.0.4"
+  },
+
+  "extra": {
+    "webroot-dir": "www",
+    "installer-paths": {
+      "www/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "www/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  }
+}
