@@ -56,14 +56,16 @@ Steps for initial setup
 - WordPress configuration, wp-config.php
 - Execute WordPress installation script.
 - Set network for WordPress, update configruation.
-  define('WP_ALLOW_MULTISITE', ture);
-  This option will turn on the **Network Setup** dashboard page.
+  The option **WP-ALLOW-MULTISITE** will turn on or off
+  the **Tools -> Network Setup** dashboard page.
 
 - Nginx configuarion for MediaWiki
 - 
 
 about WordPress index.php
 '''''''''''''''''''''''''
+
+How to remove the index.php in URL.
 
 - after install wordpress at first time, site url is stored in
   table **wp_options** in option_name **siteurl** and **home**.
