@@ -21,6 +21,12 @@ http {
     default_type application/octet-stream;
     sendfile on;
 
+    # turn on or off server tokens.
+    # this only turn off the verion infor of Server header.
+    # full control of header could use the headers more module
+    # https://github.com/openresty/headers-more-nginx-module
+    server_tokens on;
+
     # turn on gzip
     gzip on;
     gzip_comp_level 6;
