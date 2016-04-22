@@ -46,7 +46,7 @@ MediaWiki, Solr or elasticsearch, etc.
 
 **How to make WordPress private**
 
-the my private site plugin
+the my private site plugin: jonradio-private-site
 
 **How to make MediaWiki Private**
 
