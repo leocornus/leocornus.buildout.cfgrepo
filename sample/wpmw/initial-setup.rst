@@ -44,13 +44,23 @@ MediaWiki, Solr or elasticsearch, etc.
 - TODO: set up mediawiki config file.
 - TODO: set up Solr or elasticsearch
 
+**How to make WordPress private**
+
+the my private site plugin
+
+**How to make MediaWiki Private**
+
+The `Preventing_access <https://www.mediawiki.org/wiki/Manual:Preventing_access>`_
+page.
+
+Composer to automate
+--------------------
+
 plugins and extensions
-----------------------
 
 How to effectively and efficiently manage plugins and extensions.
 
 Themes and skins
-----------------
 
 Same question, how to manage themes and skins.
 
@@ -62,6 +72,11 @@ libs and web components
 - javascript libs
 - css libs
 - fonts
+
+AJAX Frontend
+-------------
+
+- wp-calypso: https://github.com/Automattic/wp-calypso
 
 TODOs
 -----
