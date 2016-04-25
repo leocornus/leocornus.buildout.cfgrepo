@@ -10,6 +10,9 @@ Here are list applications:
 - MediaWiki Extensions
 - MediaWiki Skins
 
+.. contents:: Table of Contents
+   :depth: 5
+
 TODO:
 
 Composer for PHP packages, including themes, plugins, extensions,
@@ -36,18 +39,12 @@ Thinking about the structure for buildout configuration::
   buildout-apps-wordpress.cfg
   buildout-apps-mediawiki.cfg
 
-How to set default options for a theme
---------------------------------------
-
-there are some choices for making default options for a theme:
-
-- add_option, sidebars_widgets
-- if !dynamic_sidebar() add manual widgets, dynamic_sidebar
-  return true or false
-- function the_widget could be used to load default widgets.
 
 Steps for initial setup
 -----------------------
+
+WordPress Initial Setup
+'''''''''''''''''''''''
 
 - download source code for WordPress and MediaWiki
 - setup database (database user, databases)
@@ -59,8 +56,25 @@ Steps for initial setup
   The option **WP-ALLOW-MULTISITE** will turn on or off
   the **Tools -> Network Setup** dashboard page.
 
+MediaWiki Initial Setup
+'''''''''''''''''''''''
+
 - Nginx configuarion for MediaWiki
-- 
+- MediaWiki installation script.
+- deploy and config WPMW extensions
+
+Configuration Tricks
+--------------------
+
+How to set default options for a theme
+''''''''''''''''''''''''''''''''''''''
+
+there are some choices for making default options for a theme:
+
+- add_option, sidebars_widgets
+- if !dynamic_sidebar() add manual widgets, dynamic_sidebar
+  return true or false
+- function the_widget could be used to load default widgets.
 
 about WordPress index.php
 '''''''''''''''''''''''''

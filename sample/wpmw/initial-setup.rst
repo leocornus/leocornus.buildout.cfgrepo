@@ -39,7 +39,7 @@ MediaWiki, Solr or elasticsearch, etc.
 
 - initilize MariaDB server
 - create database and its users
-- set up Nginx config
+- set up Nginx config for WordPress
 - set up wordpress config file.
 - TODO: set up mediawiki config file.
 - TODO: set up Solr or elasticsearch
@@ -56,13 +56,13 @@ page.
 Composer to automate
 --------------------
 
-plugins and extensions
-
 How to effectively and efficiently manage plugins and extensions.
 
-Themes and skins
+We will use composer to manage WordPress plugins and themes.
+The buildout config file **php/php-wp-composer.cfg** 
+will have details.
 
-Same question, how to manage themes and skins.
+How to use composer for MediaWiki extensions and skins.
 
 libs and web components
 -----------------------
