@@ -1,5 +1,8 @@
 `Git Stories <README.rst>`_ >
-Git Tips
+Git Tips from my day to day work
+
+.. contents:: Table of Contents
+   :depth: 5
 
 Git Switch Remote
 -----------------
@@ -15,6 +18,14 @@ Migration Actions
 - git clone --bare REMOTE_URL
 
 .. _Git on the Server: http://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols
+
+Mirrowing / Duplicating a repository
+------------------------------------
+
+It is very simple to `duplicating a Git repository`_:
+bare clone and mirror push.
+
+.. _duplicating a Git repository: https://help.github.com/articles/duplicating-a-repository/
 
 rev-list for total number
 -------------------------
