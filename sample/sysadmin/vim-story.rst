@@ -20,24 +20,26 @@ Tell vim to auto indent and using white spaces for tab::
 search and replace
 ------------------
 
-search and replace is under command **substitute**
-::
+search and replace is under command **substitute**::
 
   :%s/foo/bar/g
   :help substitue
+
+this search acn replace command will remove all tailing white 
+spaces for each line.::
+
+  :%s/\s\+$//
 
 record and play
 ---------------
 
 record something to register a.
-valid registers are **[0-9a-zA-Z]**
-::
+valid registers are **[0-9a-zA-Z]**::
 
   :qa
   :help record
 
-execute the contents of a register.
-::
+execute the contents of a register.::
 
   :@a
   :@@
