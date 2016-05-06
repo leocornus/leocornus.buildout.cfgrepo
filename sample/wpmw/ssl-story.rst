@@ -35,3 +35,21 @@ Deploy Private Key and Certificate
 
 We need the Private Key and the Certificates file for Web Server to provide SSL connection
 
+Sample of Nginx configuration
+-----------------------------
+
+Just need add this 2 lines::
+
+  ssl_certificate /etc/pki/tls/certs/example.com-ServerCert.crt;
+  ssl_certificate_key /etc/pki/tls/private/example.com.key;
+
+Generate Seal
+-------------
+
+Here are the seals::
+
+  <script language="javascript" src="https://seal.entrust.net/seal.js?domain=example.com&img=17"></script>
+  <a href="http://www.entrust.net">SSL</a>
+  <script language="javascript" type="text/javascript">goEntrust();</script>
+
+
