@@ -107,18 +107,43 @@ here are some memo to generate patch file and apply the patch.::
 How to move files (folders) from repo A to repo B
 -------------------------------------------------
 
-This should prrserve all commit history for the files.
+This should preserve all commit history for the files.
 The post `Moving files between git repos`_ has details steps.
 
 Here is the idea:
 
 - clone everyting to local.
-- pull everything 
+- remove the origin remote, then the current folder will be the
+  temporary remote for this merge.
+- filter branch by subdirectory
+- create new folder for the subdirectory. the directory name
+  should NOT change!
+- add move all files to the new folder, then
+  git add, and git commit.
+- go to the target git repository
+- add the remote to the filtered directory.
+- git pull everything from the new remote.
+- git remove the filtered dir.
+- git commit.
 
 question:
 
 - how to keep the folder name.
 
+Git log option follow
+---------------------
+
+The git log option **--follow** will keep all commit history,
+including folder name change.
+
+Git stash
+---------
+
+Mainly for the following actions.
+
+Stash a local change on working folder:
+
+  $ git stash create:b ser
 
 .. _Moving files between git repos: http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/
 .. _splitting a subfolder out into a new repository: https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/
