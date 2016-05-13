@@ -134,7 +134,9 @@ Git log option follow
 ---------------------
 
 The git log option **--follow** will keep all commit history,
-including folder name change.
+including folder name change.::
+
+  $ git log --follow .
 
 Git stash
 ---------
