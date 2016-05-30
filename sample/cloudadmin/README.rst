@@ -38,3 +38,7 @@ mainly we only need know the following commands:
 
 - aws help
 - aws configure
+- aws configure list
+
+By default the aws configruation file will be stored in folder
+**~/.aws**
