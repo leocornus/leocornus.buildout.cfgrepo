@@ -37,10 +37,16 @@ Create instance from dashboard
   allow or disallow network traffic, for example traffic for
   port 22, 80, 443, etc.
 - enable public ip
-- boot device and storage device, how to add storage device
-  
-- set up the key-pair, there is only one change to download the 
+- boot device and storage device, how to add storage device:
+  attach, mkfs and mount.
+- nees set up the key-pair when launch the instance.
+  there is only one change to download the 
   private key. Store it properly!
+
+Once the instance is running, we could using the private key 
+to access the instance::
+
+  $ ssh -i my-key.pem 23.12.34.56
 
 **Storage Device**
 
@@ -78,7 +84,25 @@ For example, 100GB will cost $10 / month
 
 **Using Strategy**
 
-- start from small, for example 50GB.
+- start from small, for example 30GB.
 - organize the volume properly: boot volume, data, system (including logs)
 - start from all in one, as it grow create different volumes
   to mount on different folders.
+- we could attach new volume
+- we could extend an existing volume
+
+**Expanding a Volume**
+
+basically, follow the following setps.
+
+- stop the instance, make sure not terminame the storage volume.
+- create a snapshot of your existing volume
+- create new volume from the snapshot
+- detach the old volume
+- attach the new volume with the same device name.
+- restart instance
+- extending the Linux file system.
+- verify the new volume to make sure everything is ok.
+- delete the old volume
+
+More details on page `Expanding a Vlume <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html>`_
