@@ -61,3 +61,4 @@ MariaDB:
 
   - cmake
   - libncurses5-dev, libcdk5-dev
+  - zlib1g-dev
