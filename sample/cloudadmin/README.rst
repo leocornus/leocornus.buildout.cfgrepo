@@ -17,3 +17,13 @@ mainly we only need know the following commands:
 
 By default the aws configruation file will be stored in folder
 **~/.aws**
+
+Cloud Foundry
+-------------
+
+TODO:
+
+- install cloud foundry command line utilities
+- install bluemix command line
+- set up the php_buildpack.
+- set up the python_buildpack
