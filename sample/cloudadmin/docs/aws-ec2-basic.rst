@@ -74,7 +74,7 @@ To auto mount on system reboot, need add the new device to file
 
 here is example for Ubuntu::
 
-  /dev/xvdb /usr/opt defaults,nofail,nobootwait 0 2
+  /dev/xvdb /usr/opt ext4 defaults,nofail,nobootwait 0 2
 
 **Cost!**
 
