@@ -1,3 +1,14 @@
-*.egg-info/
-*.swp
-*.pyc
+# buildout folders
+bin
+etc
+parts
+eggs
+develop-eggs
+downloads
+var
+
+# buildout temp file .installed.cfg
+.installed.cfg
+
+# temp file for vim.
+.*.swp
