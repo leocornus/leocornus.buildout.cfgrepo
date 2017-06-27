@@ -12,3 +12,6 @@ var
 
 # temp file for vim.
 .*.swp
+
+# ignore the symlink cfgrepo folder in samples
+sample/*/cfgrepo
