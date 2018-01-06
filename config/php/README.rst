@@ -31,7 +31,7 @@ Ubuntu story
 
 sptitude install memo::
 
-  $ sudo aptitude install libbz2-dev libxml2-dev gettext
-  $ sudo aptitude install libjpeg-dev libpng-dev libgd2-dev 
-  $ sudo aptitude install libmcrypt-dev libfreetype6-dev
-  $ sudo aptitude install libcurl4-openssl-dev libpcre3-dev
+  sudo aptitude install libbz2-dev libxml2-dev gettext
+  sudo aptitude install libjpeg-dev libpng-dev libgd2-dev 
+  sudo aptitude install libmcrypt-dev libfreetype6-dev
+  sudo aptitude install libcurl4-openssl-dev libpcre3-dev
