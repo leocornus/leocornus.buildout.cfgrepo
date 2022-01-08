@@ -6,6 +6,8 @@ PHP with krb5 Extension
 
 php-krb5 is an extenstion to make PHP interface with Krb 5 libs.
 
+.. highlight:: ini
+
     [buildout]
     extends = 
         cfgrepo/config/php-build-with-krb5.cfg
