@@ -12,3 +12,7 @@ MariaDB depends on:
 unbuntu install memo::
 
   $ aptitude install cmake libncurses5-dev libcdk5-dev
+
+MacOs install memo::
+
+  $ brew install cmake
